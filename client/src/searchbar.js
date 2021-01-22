@@ -8,7 +8,7 @@ import "./searchbar.css";
 
 export default function Searchbar() {
 
-    // const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState([]);
     const [input, setInput] = useState("");
     const [query, setQuery] = useState(``);
     console.log("query", query);
@@ -16,13 +16,15 @@ export default function Searchbar() {
     useEffect(() => {
        getRecipes();
     }, [query]);
-   
+
     const getRecipes = () => {
-        if(!input || input === ""){
+        console.log("input getRec", input);
+        console.log("query getRec", query)
+        if(!query || query === ""){
             return;
         }
         else {
-            axios.get("/api/getRecipe/" + input)
+            axios.get(`/api/getRecipe/`+ input )
                 .then(({data}) => {
                    console.log("data getRecipe", data);    
                 })
@@ -49,7 +51,7 @@ export default function Searchbar() {
                         >
                         <input className="search-input" 
                                 type="text" 
-                                onChange={ setInput } />               
+                                onChange={ onChange } />               
                         <button className="search-button" 
                                 type="submit"
                                 >Search
