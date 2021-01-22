@@ -7,7 +7,7 @@ if(location.pathname === "/welcome") {
     elem = <LandingPage />;
 }
 else {
-    elem = <App  />
+    elem = <App />
 }
 
 
