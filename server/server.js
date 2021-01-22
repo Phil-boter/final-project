@@ -28,16 +28,24 @@ app.get("/api/getRecipe/:input", (req,res) => {
                 res.json({
                     success: true,
                     recipes: response.data.hits,
-                })
+                });
               }
         catch (error){
-                 console.log("error in getRecipe", error);
+            console.log("error in getRecipe", error);
+            res.json({ success: false });
         }
         return response;
     };
     getRecipes(req.params.input);
 
 })
+
+// app.get("/logout", (req, res) => {
+//     console.log("userId logout before", req.session.userId);
+//     req.session = null;
+//     console.log("userId logout after", req.session);
+//     res.redirect("/landingpage");
+// });
 
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "client", "index.html"));
@@ -47,8 +55,3 @@ app.listen(process.env.PORT || 3001, function () {
     console.log("I'm listening.");
 });
 
-
-// const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
-// const data = await response.json();
-// setRecipes(data.hits);
-// console.log("data:", data);

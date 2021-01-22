@@ -3,19 +3,20 @@ import axios from "./axios";
 import { BrowserRouter, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import Searchbar from "./searchbar";
+import Recipes from "./recipes";
+import Navbar from "./navbar";
 
 import './app.css';
 
 export default function App() {
 
-    const [input, setInput] = useState("");
+    
     
     return (
         <>
-
+            <Navbar />
             <div>Hello, World!</div>
-            <Searchbar />    
+            <Recipes />    
         </>    
     );
 }

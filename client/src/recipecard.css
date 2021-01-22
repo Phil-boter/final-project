@@ -1,0 +1,19 @@
+.recipecard-container {
+    border: 1px solid brown;
+}
+
+.recipecard-img {
+    border: 1px solid purple;
+}
+
+.recipecard-ingredients {
+    border: 1px solid red;
+}
+
+.recipecard-info-container {
+    border: 1px solid blue;
+}
+
+.recipecard-info {
+    border: 1px solid green;
+}

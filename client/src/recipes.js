@@ -2,31 +2,31 @@ import React from "react";
 import axios from "./axios";
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
-import "./searchbar.css";
+import "./recipes.css";
+import Recipecard from "./recipecard";
 
-export default function Searchbar() {
+export default function Recipes() {
 
     const [recipes, setRecipes] = useState([]);
     const [input, setInput] = useState("");
     const [query, setQuery] = useState(``);
-    console.log("query", query);
     
     useEffect(() => {
        getRecipes();
     }, [query]);
 
     const getRecipes = () => {
-        console.log("input getRec", input);
-        console.log("query getRec", query)
+
         if(!query || query === ""){
             return;
         }
         else {
             axios.get(`/api/getRecipe/`+ input )
                 .then(({data}) => {
-                   console.log("data getRecipe", data);    
+                   console.log("data getRecipe", data);
+                   
+                   setRecipes(data.recipes);    
                 })
                 .catch((error) => {
                     console.log("error in getRecipe", error);
@@ -58,9 +58,17 @@ export default function Searchbar() {
                         </button>
                     </form>
                 </div>
-        
-          
-          
+                
+                <div className="cards">
+                    {input && recipes.map((recipe, index) => (
+                        <Recipecard key={index}              
+                                img={recipe.recipe.image}
+                                title={recipe.recipe.label}    
+                                ingredients={recipe.recipe.ingredients}
+                                cautions={recipe.recipe.cautions}  
+                        />
+                    ))}
+                </div>         
             </>
     );
 };
