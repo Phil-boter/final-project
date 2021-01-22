@@ -1,0 +1,12 @@
+.search-bar {
+    border: 1px solid green;
+
+}
+
+.search-form {
+    border: 1px solid yellow;
+}
+
+.search-input {
+    border: 1px solid blue;
+}
