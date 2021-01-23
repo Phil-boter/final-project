@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { BrowserRouter, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import "./navbar.css";
+import "./css/navbar.css";
 
 export default function Navbar() {
 

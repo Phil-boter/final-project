@@ -3,7 +3,7 @@ import axios from "./axios";
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
 
-import "./searchbar.css";
+import "./css/searchbar.css";
 
 
 export default function Searchbar({ input, setInput, recipes, setRecipes, query, setQuery }) {

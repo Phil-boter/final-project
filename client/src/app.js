@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 
 import Recipes from "./recipes";
 import Navbar from "./navbar";
+import Recipedetail from "./recipedetail";
 
+import './css/app.css';
 
-import './app.css';
 
 export default function App(props) {
 
@@ -21,8 +22,7 @@ export default function App(props) {
         
             <Route 
                 render={()=>  <Navbar />  }
-            />
-            <div>Hello, World!</div>            
+            />      
             <Route 
                 exact
                 path="/"
@@ -36,6 +36,24 @@ export default function App(props) {
                 
                 /> }
             />
+            <Route 
+                path="/recipedetail/:index"
+                render={() => (
+                    <Recipedetail
+                        key={props.match.index}
+                        match={props.match}
+                        history={props.history}
+                        recipes = {recipes}
+                        setRecipes = {setRecipes}
+                        input = {input}
+                        setInput = {setInput}
+                        query = {query}
+                        setQuery = {setQuery}
+                        img={props.image}
+                        url={props.url}
+                    />    
+                )}
+            />  
 
               
         </> 
