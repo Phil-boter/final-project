@@ -1,9 +1,11 @@
 import ReactDOM from "react-dom";
 import App from "./app";
+import LandingPage from "./landingpage";
+
 
 let elem;
 
-if(location.pathname === "/welcome") {
+if(location.pathname === "/landingpage") {
     elem = <LandingPage />;
 }
 else {
