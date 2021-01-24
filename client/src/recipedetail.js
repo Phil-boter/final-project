@@ -3,9 +3,9 @@ import './css/recipedetail.css';
 
 export default function Recipedetail (props) {
 
-console.log("recipes in recipedetail", props);
-console.log("recipes in recipedetail", props.recipe);
-console.log("recipes in recipedetail", props.recipe.recipe);
+// console.log("recipes in recipedetail", props);
+// console.log("recipes in recipedetail", props.recipe);
+// console.log("recipes in recipedetail", props.recipe.recipe);
 
     return (
         <div className="cards">
