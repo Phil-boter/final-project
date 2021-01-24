@@ -59,9 +59,7 @@ const cookieSessionMiddleware = cookieSession({
 
 // must be after cookiesession
 app.use(cookieSessionMiddleware);
-// io.use(function(socket, next) {
-//     cookieSessionMiddleware(socket.request, socket.request.res, next);
-// });
+
 
 app.use(csurf());
 
@@ -219,6 +217,26 @@ app.post("/password/reset/verify", (req,res) => {
                 res.json({success: false});
             });
     });
+});
+
+app.get("/user", (req, res) => {
+    console.log("get user");
+    console.log("req session", req.session);
+    db.getUserData(req.session.userId)
+        .then(({rows}) => {
+            res.json({
+                success: true,
+                id: rows[0].id,
+                first: rows[0].first,
+                last: rows[0].last,
+                image: rows[0].image,
+                bio: rows[0].bio,
+            });
+        })
+        .catch((error)=> {
+            console.log("error in getUserData", error);
+            res.json({ success: false });
+        })
 });
 
 app.get("/logout", (req, res) => {

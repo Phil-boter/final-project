@@ -42,3 +42,9 @@ module.exports.updateUserPassword = (email, password) => {
     const params = [email, password];
     return db.query(q, params);
 };
+
+module.exports.getUserData = (id) => {
+    const q = `SELECT * FROM users WHERE id = $1`;
+    const params = [id];
+    return db.query(q, params);
+};

@@ -5,12 +5,12 @@ import LandingPage from "./landingpage";
 
 let elem;
 
-if(location.pathname === "/landingpage") {
-    elem = <LandingPage />;
-}
-else {
+// if(location.pathname === "/landingpage") {
+//     elem = <LandingPage />;
+// }
+// else {
     elem = <App />
-}
+// }
 
 
 
