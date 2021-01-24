@@ -52,16 +52,16 @@ export default class SearchBarYelp extends React.Component {
         event.preventDefault();
     }
 
-    renderSortByOptions() {
-        return Object.keys(this.sortByOptions).map(sortByOption => {
-            let sortByOptionValue = this.sortByOptions[sortByOption];
-            return (<li className={this.getSortByClass(sortByOptionValue)}
-                    key={sortByOptionValue}
-                    onClick={this.handleSortByChange}>
-                  {sortByOption}
-                  </li>);
-        });
-    }
+    // renderSortByOptions() {
+    //     return Object.keys(this.sortByOptions).map(sortByOption => {
+    //         let sortByOptionValue = this.sortByOptions[sortByOption];
+    //         return (<li className={this.getSortByClass(sortByOptionValue)}
+    //                 key={sortByOptionValue}
+    //                 onClick={this.handleSortByChange}>
+    //               {sortByOption}
+    //               </li>);
+    //     });
+    // }
 
     render() {
         return (
@@ -69,11 +69,11 @@ export default class SearchBarYelp extends React.Component {
                 <div className="SearchBar-header">
                     <p>Still no Inspiration? Find a restaurant near your place!</p>
                 </div>
-                <div className="SearchBar-sort-options">
+                {/* <div className="SearchBar-sort-options">
                     <ul>
                         {this.renderSortByOptions()}
                     </ul>
-                </div>
+                </div> */}
                 <div className="SearchBar-fields">
                     <input placeholder="Search for Restaurants" onChange={this.handleTermChange} />
                     <input placeholder="Where?" onChange={this.handleLocationChange}/>

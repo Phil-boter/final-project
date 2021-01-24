@@ -20,7 +20,7 @@ import Recipe from "./recipe";
     
     renderRecipes() {
         if(!this.props.recipes.recipes){
-            return ;
+            return;
         }
         else {
             return (
