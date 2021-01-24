@@ -10,24 +10,33 @@ export default function Navbar() {
 
     return (
         <BrowserRouter>
+     
             <div className="nav-container">
                 <div className="logo">
-                    <img src="" />
+                   <img src="/logo.png" alt="" />
                 </div>
+            
                 <div>
                     <ul className="nav-links">
                         <li>
                             <Link
-                                to="/"
-                            >recipes
+                                to=".searchbar"
+                            >Cart
                             </Link>
                         </li>
                         <li>
-                            <a href="/logout">logout</a>
+                            <Link
+                                to=".Searchbar"
+                            >Cart
+                            </Link>
                         </li>
+                        {/* <li>
+                            <a href="/logout">logout</a>
+                        </li> */}
                     </ul>
                 </div>
             </div>
+         
         </BrowserRouter>
     );
 }

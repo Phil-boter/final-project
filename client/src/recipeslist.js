@@ -5,11 +5,11 @@ import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import "./css/recipes.css";
-import Recipedetail from "./recipedetail";
+import "./css/list.css";
+import Recipe from "./recipe";
 
 
- export default class Recipes extends Component{
+ export default class RecipesList extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -24,20 +24,13 @@ import Recipedetail from "./recipedetail";
         }
         else {
             return (
-
-            <div>
-
-
-            <p>Èl Jefe</p>
-            <div> 
-                {
-                    this.props.recipes.recipes.map((recipe, index) => { 
-                        return <Recipedetail recipe={recipe} key={index} />
-                    })
-                }
-
-            </div>
-            </div>
+                <div className="list">
+                    {
+                        this.props.recipes.recipes.map((recipe, index) => { 
+                            return <Recipe recipe={recipe} key={index} />
+                        })
+                    }
+                </div>
             )
         }
     }

@@ -1,3 +1,88 @@
+/* Universal Styles */
+
+html {
+    font-size: 18px;
+  }
 body {
-    background-color: dimgray;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  
+  input:focus {
+    outline: none;
+  }
+  
+  /* Reusable Component - Image Container */
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+  }
+  
+  .image-container img {
+    width: 100%;
+  }
+  
+  /* App Styles */
+  
+  .App {
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  h1 {
+    padding: .66rem 0;
+    text-align: center;
+    background-color: #cca353;
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+  .background-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    background-image: url('/eatBig.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-position-y: -50px;
+    height: 100vh;
+  }
+
+  .logo {
+    position: absolute;
+    left:0;
+ }
+ .logo img {
+     height: 100px;
+     width: 100px;
+ }
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 15px;
+  }
+    .background-image {
+      background-image: url('./eatSmall.jpg');
+      background-position: 50% 0;
+      background-position-y: -50px;
+    }
+    .logo img {
+      height: 60px;
+      width: 60px;
+    }
+    
+}
+@media only screen and (min-width: 1300px) {
+
+    .background-image {
+      background-position: 50% 0;
+      background-position-y: -350px;
+    }
+
+    
 }

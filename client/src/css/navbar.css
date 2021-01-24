@@ -1,6 +1,30 @@
 .nav-container {
     border: 1px solid black;
+    width: 100vw;
+    background-color: transparent;
+    color:ghostwhite;
+    display: flex;
+    justify-content: center;
+
+}
+
+.logo {
+   position: absolute;
+   left:0;
+}
+.logo img {
+    height: 80px;
+    width: 80px;
 }
 .nav-links {
+    display:flex;
+
     border: 1px solid white;
+}
+.nav-links ul {
+    list-style: none;
+}
+.nav-links a {
+    text-decoration: none;
+    color: ghostwhite;
 }

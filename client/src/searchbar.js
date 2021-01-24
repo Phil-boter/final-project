@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 // import { useState, useEffect } from "react";
 import { Component } from "react";
 
-import "./css/searchbar.css";
+import "./css/SearchBar.css";
 
 
 export default class Searchbar extends Component {
@@ -61,20 +61,24 @@ sendRecipe(data){
 render() {
     return(
             <>
-                <div className="search-bar">
+                <div className="SearchBar Img">
                 {this.state.error && <h3 className="error">Ooops!! Something went wrong...</h3>}
-                        <input className="search-input" 
+                    <div className="SearchBar-fields">
+                        <input
+                                placeholder="Search for Inspiration"
                                 type="text" 
-                                onChange={(e) => this.handleChange(e)} />             
-                        <button className="search-button" 
+                                onChange={(e) => this.handleChange(e)} />
+                    </div>
+                    <div className="SearchBar-submit" >
+                        <button
                                 type="submit"
                                 onClick={()=> this.handleClick()}
-                                >Search
+                                >Let's Go
                         </button>
-            
+                    </div>
                 </div>        
             </>
-    );
+        );
     }
 
 };
