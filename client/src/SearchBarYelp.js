@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/SearchBar.css";
+import { Link } from "react-router-dom"
 
 export default class SearchBarYelp extends React.Component {
     constructor(props) {
@@ -65,9 +66,9 @@ export default class SearchBarYelp extends React.Component {
 
     render() {
         return (
-            <div className="SearchBar Yelp">
+            <div className="SearchBar">
                 <div className="SearchBar-header">
-                    <p>Still no Inspiration? Find a restaurant near your place!</p>
+                    <h2>Still no Inspiration? Find a restaurant near your place!</h2>
                 </div>
                 {/* <div className="SearchBar-sort-options">
                     <ul>
@@ -79,7 +80,17 @@ export default class SearchBarYelp extends React.Component {
                     <input placeholder="Where?" onChange={this.handleLocationChange}/>
                 </div>
                 <div className="SearchBar-submit">
-                    <button onClick={this.handleSearch}>Let's Go</button>
+                    <button onClick={this.handleSearch}>Go</button>
+                </div >
+                <div className="SearchBar-header next">
+                    <div className="SearchBar-next" >
+                        <h3>Find some Insiration for cooking!</h3>
+                    </div>                    
+                    <div>
+                        <Link to="/" >
+                            <button className="Switch">Get some recipes</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         );

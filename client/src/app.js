@@ -28,7 +28,6 @@ export default class App extends Component {
             recipes: [],
             businesses: [],
             showRecipeIsVisible: false,
-
         };
         this.setRecipe = this.setRecipe.bind(this);
         this.searchYelp = this.searchYelp.bind(this);
@@ -90,27 +89,51 @@ export default class App extends Component {
                     {/* <Route 
                         render={()=>  <Navbar />  }
                     />       */}
-                    <div className="background-image">
-                        <Searchbar 
-                            setRecipe = {this.setRecipe}
-                        />
-                        <SearchBarYelp searchYelp={this.searchYelp} />
-                    </div>
-                     
-                    <Route 
+                    <Route
+                        exact
+                        path="/"
+                        render={()=>                     
+                        <div className="background-image">
+                            <Searchbar setRecipe = {this.setRecipe} />                      
+                        </div>}
+                    >
+                    </Route>
+                    <Route
+                        exact
+                        path="/"
+                        render={()=>
+                            <RecipesList 
+                            setRecipe={this.setRecipe}
+                            recipes={this.state.recipes}
+                            />
+                        }
+                    >
+                    </Route>
+                    {/* <Route 
                         exact
                         path="/"
                         render={()=>  <RecipesList 
                             setRecipe={this.setRecipe}
                             recipes={this.state.recipes}                       
                         /> }
-                    />  
-                    <RestaurantList businesses={this.state.businesses} />
+                    />   */}
+                    <Route
+                        path="/restaurant"
+                        render={()=> 
+                            <div className="background-image">
+                            <SearchBarYelp 
+                                searchYelp={this.searchYelp} />
+                            </div>                                
+                         }>
+                    </Route>
+                    <Route
+                        path="/restaurant"
+                        render={()=> 
+                            <RestaurantList businesses={this.state.businesses} />
+                        }    
+                    >                        
+                    </Route>
 
-
-
-        
-                      
                 </> 
                 </BrowserRouter>   
             );   

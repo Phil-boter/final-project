@@ -1,5 +1,4 @@
 import React from "react";
-import "./css/recipe.css";
 import "./css/Restaurant.css"
 import RecipeModal from "./recipemodal";
 
@@ -15,7 +14,8 @@ console.log("recipes in recipe", props.recipe.recipe);
 
                 <div className="restaurant">
                     <div className="image-container">                   
-                        <img className="recipecard-img" src={props.recipe.recipe.image} alt="" onClick={props.toggleShowRecipe} />
+                        {/* <img className="recipecard-img" src={props.recipe.recipe.image} alt="" /> */}
+                        <a href={props.recipe.recipe.url} target="_blank"><img className="recipecard-img" src={props.recipe.recipe.image} alt="" /></a>
                     </div>    
                     <h2>{props.recipe.recipe.label}</h2>               
                     <ol className="recipecard-ingredients">
@@ -23,13 +23,15 @@ console.log("recipes in recipe", props.recipe.recipe);
                             <li key={index}>{ingredient.text}</li>
                         ))}
                     </ol>
-                    <div className="restaurant-information">
-                    <a href={props.recipe.recipe.url}>Instructions</a>
-                    <p>on {props.recipe.recipe.source}</p>
-                        <div className="restaurant-address">
-                            <p className="recipecard-info">Calories: {props.recipe.recipe.calories}&nbsp;</p>
-                            <p className="recipecard-info">Cautions: {props.recipe.recipe.cautions}&nbsp;</p>
-                        </div> 
+                    <div className="recipe-information">
+                        <p>Instructions</p>
+                        <p>on &nbsp; <a href={props.recipe.recipe.url} target="_blank">{props.recipe.recipe.source}</a></p>
+                    </div>
+                    <div className="recipe-information">
+                        <p>Time: {`${props.recipe.recipe.totalTime} min `}</p>    
+                    </div> 
+                    <div className="recipe-information">  
+                        <p>Cautions: {`${props.recipe.recipe.cautions} `}</p>
                     </div> 
                 </div>
 
@@ -37,3 +39,4 @@ console.log("recipes in recipe", props.recipe.recipe);
     );
 };
 
+// onClick={props.toggleShowRecipe} 

@@ -7,7 +7,7 @@ export default class Restaurant extends React.Component {
     return (
       <div className="restaurant">
         <div className="image-container">
-          <img src={this.props.business.imageSrc} alt=""/>
+          <a href={this.props.business.url} target="_blank"><img src={this.props.business.imageSrc} alt=""/></a>
         </div>
         <h2>{this.props.business.name}</h2>
         <div className="restaurant-information">
@@ -17,8 +17,8 @@ export default class Restaurant extends React.Component {
             <p>{`${this.props.business.state} ${this.props.business.zipCode}`}</p>
           </div>
           <div className="restaurant-reviews">
-            <h3>{this.props.business.category.toUpperCase()}</h3>
-            <h3 className="rating">{`${this.props.business.rating} stars`}</h3>
+            <h4>{this.props.business.category.toUpperCase()}</h4>
+            <h4 className="rating">{`${this.props.business.rating} stars`}</h4>
             <p>{`${this.props.business.reviewCount} reviews`}</p>
           </div>
         </div>

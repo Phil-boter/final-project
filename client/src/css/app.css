@@ -1,58 +1,59 @@
 /* Universal Styles */
 
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+
 html {
     font-size: 18px;
-  }
+}
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
   
-  input:focus {
+input:focus {
     outline: none;
-  }
+}
   
   /* Reusable Component - Image Container */
   
-  .image-container {
+.image-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     background: #000;
-  }
+}
   
-  .image-container img {
+.image-container img {
     width: 100%;
-  }
+}
   
   /* App Styles */
   
-  .App {
-    font-family: 'Work Sans', sans-serif;
-  }
+.App {
+    font-family: "Work Sans", sans-serif;
+}
   
-  h1 {
+h1 {
     padding: .66rem 0;
     text-align: center;
-    background-color: #cca353;
-    font-family: Poppins, sans-serif;
+    font-family: "Megrim", cursive;
     font-size: 1.8rem;
     color: #fff;
-  }
+}
   .background-image {
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    background-image: url('/eatBig.jpg');
+    background-image: url("/eatBig.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-position-y: -50px;
     height: 100vh;
-  }
+}
 
   .logo {
     position: absolute;
@@ -61,13 +62,13 @@ body {
  .logo img {
      height: 100px;
      width: 100px;
- }
+}
 @media only screen and (max-width: 560px) {
   html {
     font-size: 15px;
   }
     .background-image {
-      background-image: url('./eatSmall.jpg');
+      background-image: url("./eatSmall.jpg");
       background-position: 50% 0;
       background-position-y: -50px;
     }
@@ -77,7 +78,7 @@ body {
     }
     
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1550px) {
 
     .background-image {
       background-position: 50% 0;

@@ -29,6 +29,7 @@
     font-weight: 300;
     line-height: 1rem;
   }
+
   
   .restaurant-address {
     display: flex;
@@ -43,12 +44,27 @@
     text-align: right;
   }
   
-  .restaurant-reviews h3 {
-    color: #CCA353;
+  .restaurant-reviews h4 {
+    color: rgb(184, 78, 184);
     font-weight: 600;
   }
   
   .restaurant-reviews .rating {
     font-size: .88rem;
+    line-height: 1rem;
+  }
+
+  /* ----- specuials for recipe */
+
+  .recipe-information {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .recipe-information p {
+    display: flex;
+    justify-content: space-between;
+    font-size: .88rem;
+    font-weight: 300;
     line-height: 1rem;
   }

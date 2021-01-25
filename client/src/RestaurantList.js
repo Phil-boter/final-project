@@ -1,15 +1,12 @@
 import React from "react";
-import "./css/list.css";
+import "./css/recipeslist.css";
 
 import Restaurant from "./Restaurant";
 
 export default class RestaurantList extends React.Component {
 
-
-
-
-
     renderRestaurant() {
+      
       if(!this.props.businesses){
           return;
       }

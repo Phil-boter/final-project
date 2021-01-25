@@ -254,12 +254,13 @@ app.get("/api/getRecipe/:input", (req,res) => {
     let response;
     async function getRecipes(input) {
         try {
-            response = await axios.get(`https://api.edamam.com/search?q=${input}&app_id=${secrets.APP_ID}&app_key=${secrets.APP_KEY}`);
+                response = await axios.get(`https://api.edamam.com/search?q=${input}&app_id=${secrets.APP_ID}&app_key=${secrets.APP_KEY}`);
+             
                 console.log("result getRecipe", response);
-                console.log("hits:",response.data.hits); // 
+                console.log("hits:",response.data.hits);
                 res.json({
-                    success: true,
-                    recipes: response.data.hits,
+                   success: true,                  
+                   recipes: response.data.hits.map(obj=> ({...obj, isVisible:false})),
                 });
               }
         catch (error){

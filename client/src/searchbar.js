@@ -61,7 +61,10 @@ sendRecipe(data){
 render() {
     return(
             <>
-                <div className="SearchBar Img">
+                <div className="SearchBar">
+                <div className="SearchBar-header">
+                    <h2>Today I might want to eat...</h2>
+                </div>
                 {this.state.error && <h3 className="error">Ooops!! Something went wrong...</h3>}
                     <div className="SearchBar-fields">
                         <input
@@ -73,9 +76,19 @@ render() {
                         <button
                                 type="submit"
                                 onClick={()=> this.handleClick()}
-                                >Let's Go
+                                >Go
                         </button>
                     </div>
+                    <div className="SearchBar-header next">
+                    <div className="SearchBar-next" >
+                        <h3>Still no Inspiration?</h3>
+                    </div>                    
+                    <div>
+                        <Link to="/restaurant" >
+                            <button className="Switch">Get more Inspiration</button>
+                        </Link>
+                    </div>
+                </div>
                 </div>        
             </>
         );

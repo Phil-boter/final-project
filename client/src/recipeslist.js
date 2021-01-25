@@ -2,10 +2,9 @@ import React from "react";
 import { Component } from "react";
 import axios from "./axios";
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
 
-import "./css/list.css";
+
+import "./css/recipeslist.css";
 import Recipe from "./recipe";
 import RecipeModal from "./recipemodal";
 
@@ -20,6 +19,8 @@ import RecipeModal from "./recipemodal";
         this.toggleShowRecipe = this.toggleShowRecipe.bind(this);
         this.closeShowRecipe = this.closeShowRecipe.bind(this);
     }
+
+
     toggleShowRecipe() {
         console.log("click toggle")
         this.setState({
@@ -42,27 +43,28 @@ import RecipeModal from "./recipemodal";
             return (
                 <div className="list">
                     {
-                        this.props.recipes.recipes.map((recipe, index, modal) => { 
+                        this.props.recipes.recipes.map((recipe, index) => { 
                             return (
                                 <>
-                                    <div>
+                                    <div key={index} onClick={e=>this.toggleShowRecipe(index)}>
                                     <Recipe 
-                                        recipe={recipe} 
+                                        recipe={recipe}
                                         key={index} 
                                         toggleShowRecipe={this.toggleShowRecipe}
-                                        // closeShowRecipe={this.closeShowRecipe}
+                                        
                                     />
                                     </div>
-                                    <div>
-                                        {this.state.showRecipeIsVisible && (
-                                            
+                                    {/* <div> */}
+                                        {/* {this.state.showRecipeIsVisible && (
+                                        
                                                 <RecipeModal
                                                     recipe={recipe}
-                                                    key={modal} 
+                                                    key={index}
                                                     closeShowRecipe={this.closeShowRecipe}
                                                 />
+                                                
                                         )}
-                                    </div>
+                                    </div> */}
 
                                 </>
                             );

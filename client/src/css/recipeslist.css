@@ -1,12 +1,6 @@
-/* .search-bar {
-    border: 1px solid green;
-
+.list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4.4rem 10%;
 }
-
-.search-form {
-    border: 1px solid yellow;
-}
-
-.search-input {
-    border: 1px solid blue;
-} */
