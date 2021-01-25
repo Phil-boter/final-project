@@ -25,14 +25,15 @@ export default class App extends Component {
             image: "",
             id: "",
             bio: "",
-            recipes: {},
-            businesses: []
-            // uploaderIsVisible: false
+            recipes: [],
+            businesses: [],
+            showRecipeIsVisible: false,
+
         };
         this.setRecipe = this.setRecipe.bind(this);
         this.searchYelp = this.searchYelp.bind(this);
-        // this.toggleUploader = this.toggleUploader.bind(this);
-        // this.closeUploader= this.closeUploader.bind(this);
+
+
     }
 
     componentDidMount() {
@@ -60,6 +61,8 @@ export default class App extends Component {
         //         }
         // });
     }
+
+
 
     setRecipe(data) {
         console.log("new recipe: ", data);

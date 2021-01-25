@@ -1,21 +1,26 @@
 import React from "react";
-import "./css/recipe.css";
-import "./css/Restaurant.css"
-import RecipeModal from "./recipemodal";
+// import "./css/recipe.css";
+// import "./css/Restaurant.css"
 
-export default function Recipe(props) {
+
+export default function RecipeModal(props) {
 
 // console.log("recipes in recipe", props);
-console.log("recipes in recipe", props.recipe);
-console.log("recipes in recipe", props.recipe.recipe);
+// console.log("recipes in recipe", props.recipe);
+// console.log("recipes in recipe", props.recipe.recipe);
 
     return (
             <>                       
-
+            <div>
+           
+                <p onClick={props.closeShowRecipe}>close</p>
+                             
+           </div>
+                                  
 
                 <div className="restaurant">
                     <div className="image-container">                   
-                        <img className="recipecard-img" src={props.recipe.recipe.image} alt="" onClick={props.toggleShowRecipe} />
+                        <img className="recipecard-img" src={props.recipe.recipe.image} alt="" />
                     </div>    
                     <h2>{props.recipe.recipe.label}</h2>               
                     <ol className="recipecard-ingredients">
