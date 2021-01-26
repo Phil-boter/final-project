@@ -18,7 +18,7 @@ render() {
                         <p className="recipe-close-modal" onClick={this.props.closeShowRecipe}>close</p>
                     </div>    
                         <div className="image-container">                   
-                            <a href={this.props.recipe.recipe.url} target="_blank"><img className="recipecard-img" src={this.props.recipe.recipe.image} alt="" /></a>
+                            <a href={this.props.recipe.recipe.url} target="_blank"><img className="recipe-modal-image" src={this.props.recipe.recipe.image} alt="" /></a>
                         </div>    
                         <h2>{this.props.recipe.recipe.label}</h2>               
                         <ol className="recipecard-ingredients">

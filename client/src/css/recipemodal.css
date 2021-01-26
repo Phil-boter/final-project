@@ -22,11 +22,12 @@
     background-color: white;
     border-radius: 15px;
     animation: appear 2s ;
-    overflow: hidden;
+    overflow: scroll;
 }
-.recipe-modal-content img {
+.recipe-modal-image {
     width: 300px;
-    object-fit: cover;
+    min-height: 300px !important;
+    /* object-fit: cover; */
 }
 
 @keyframes appear {
