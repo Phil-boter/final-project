@@ -6,7 +6,9 @@ export default class Restaurant extends React.Component {
 
     renderPhone() {
         if(!this.props.business.phone){
-            return;
+            return (
+              <p>Phone: none provided</p>
+            )
         }
         else {
             return (

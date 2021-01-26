@@ -67,7 +67,7 @@ render() {
                 </div>
                 {this.state.error && <h3 className="error">Ooops!! Something went wrong...</h3>}
                     <div className="SearchBar-fields">
-                        <input
+                        <input className="field"
                                 placeholder="Search for Inspiration"
                                 type="text" 
                                 onChange={(e) => this.handleChange(e)} />

@@ -1,14 +1,13 @@
 /* Universal Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
-
 html {
-    font-size: 18px;
+    font-size: 16px;
 }
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Julius Sans One', sans-serif;
 }
 
   
@@ -33,7 +32,7 @@ input:focus {
   /* App Styles */
   
 .App {
-    font-family: "Work Sans", sans-serif;
+  font-family: 'Julius Sans One', sans-serif;
 }
   
 h1 {
@@ -52,7 +51,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-position-y: -50px;
-    height: 100vh;
+
 }
 
   .logo {
@@ -60,8 +59,8 @@ h1 {
     left:0;
  }
  .logo img {
-     height: 100px;
-     width: 100px;
+     height: 60px;
+     width: 60px;
 }
 @media only screen and (max-width: 560px) {
   html {
@@ -73,17 +72,33 @@ h1 {
       background-position-y: -50px;
     }
     .logo img {
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
     }
     
+}
+
+@media only screen and (min-width: 1050px) {
+
+  .background-image {
+    background-position: 50% 0;
+    background-position-y: -150px;
+  }
+  .logo img {
+    height: 100px;
+    width: 100px;
+  }
+  
 }
 @media only screen and (min-width: 1550px) {
 
     .background-image {
       background-position: 50% 0;
-      background-position-y: -350px;
+      background-position-y: -650px;
     }
-
+    .logo img {
+      height: 100px;
+      width: 100px;
+    }
     
 }

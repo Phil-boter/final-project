@@ -24,12 +24,12 @@ export default class SearchBarYelp extends React.Component {
         };
     }
 
-    getSortByClass(sortByOption) {
-        if (this.state.sortBy === sortByOption) {
-            return "active";
-        }
-            return "";
-    }
+    // getSortByClass(sortByOption) {
+    //     if (this.state.sortBy === sortByOption) {
+    //         return "active";
+    //     }
+    //         return "";
+    // }
 
     handleSortByChange(sortByOption) {
         this.setState({sortBy: sortByOption});
@@ -76,15 +76,15 @@ export default class SearchBarYelp extends React.Component {
                     </ul>
                 </div> */}
                 <div className="SearchBar-fields">
-                    <input placeholder="Search for Restaurants" onChange={this.handleTermChange} />
-                    <input placeholder="Where?" onChange={this.handleLocationChange}/>
+                    <input className="field-left" placeholder="Search for Restaurants" onChange={this.handleTermChange} />
+                    <input className="field-right" placeholder="City and zip-code" onChange={this.handleLocationChange}/>
                 </div>
                 <div className="SearchBar-submit">
                     <button onClick={this.handleSearch}>Go</button>
                 </div >
                 <div className="SearchBar-header next">
                     <div className="SearchBar-next" >
-                        <h3>Find some Insiration for cooking!</h3>
+                        <h3>Find your Inspiration for cooking!</h3>
                     </div>                    
                     <div>
                         <Link to="/" >
