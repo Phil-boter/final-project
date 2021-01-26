@@ -11,7 +11,8 @@
     text-align: center;
     color: #ffffff;
     margin-bottom: 3rem;
-    font-family: 'Megrim', cursive;
+    /* font-family: 'Megrim', cursive; */
+    font-family: 'Julius Sans One', sans-serif;
 }
 
 .SearchBar-header h3 {
