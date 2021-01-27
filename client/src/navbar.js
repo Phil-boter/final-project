@@ -18,21 +18,21 @@ export default function Navbar() {
             
                 <div>
                     <ul className="nav-links">
-                        <li>
+                    <li>
                             <Link
-                                to=".searchbar"
-                            >Cart
+                                to="favoriteRecipe"
+                            >Recipes
                             </Link>
                         </li>
                         <li>
                             <Link
-                                to=".Searchbar"
-                            >Cart
+                                to="favoriteRestaurant"
+                            >Restaurants
                             </Link>
                         </li>
-                        {/* <li>
+                        <li>
                             <a href="/logout">logout</a>
-                        </li> */}
+                        </li>
                     </ul>
                 </div>
             </div>

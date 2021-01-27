@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import "./css/recipemodal.css"
-import SaveFavorites from "./saveFavorites";
+// import SaveFavorites from "./saveFavorites";
 
 
 
@@ -27,7 +27,7 @@ render() {
                                 ))}
                             </ol>
                             <div className="recipe-information">
-                                <p>Instructions on &nbsp; <a href={this.props.recipe.recipe.url} target="_blank">{this.props.recipe.recipe.source}</a></p>
+                                <p>Instructions on <a href={this.props.recipe.recipe.url} target="_blank">{this.props.recipe.recipe.source}</a></p>
                             </div>
                             <div className="recipe-information">
                                 {this.props.renderYield} 
@@ -38,9 +38,9 @@ render() {
                             <div className="recipe-information">  
                                 {this.props.renderCautions}
                             </div> 
-                            <SaveFavorites 
+                            {/* <SaveFavorites 
                                  recipe={this.props.recipe}
-                            />
+                            /> */}
                 
                         </div>
                     </div> 

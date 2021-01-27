@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+    color:black;
 }
 
 .recipe-modal-content {
@@ -25,8 +26,8 @@
 }
 
 .recipe-modal-image {
-    text-align: center;
-    width: 250px;
+
+    width: 300px;
     object-fit: cover;
 }
 

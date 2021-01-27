@@ -1,11 +1,14 @@
 .nav-container {
-    border: 1px solid black;
+    position: absolute;
     width: 100vw;
-    background-color: transparent;
+    background-color: black;
     color:ghostwhite;
     display: flex;
+    flex-flow: row-reverse wrap;
+    text-decoration: none;
     justify-content: center;
-
+    z-index: 2;
+    height: 50px;
 }
 
 .logo {
@@ -16,15 +19,25 @@
     height: 80px;
     width: 80px;
 }
-.nav-links {
-    display:flex;
-
-    border: 1px solid white;
-}
-.nav-links ul {
-    list-style: none;
-}
-.nav-links a {
+.nav-links li, a {
     text-decoration: none;
     color: ghostwhite;
+    list-style: none;
+    display: inline-flex;
+    margin-left: 3rem;
+    margin-right: .3rem;
+}
+
+@media only screen and (max-width: 560px){
+    .nav-links li, a {
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+        font-weight: 800;
+        margin-left: .7rem;
+        margin-right: .3rem;
+    }
+    .nav-container{
+        background-color: white;
+    }
 }

@@ -11,7 +11,7 @@ import Recipe from "./recipe";
  export default class RecipeList extends Component{
 
     renderRecipes() {
-        if(!this.props.recipes.recipes){
+        if(!this.props.recipes.recipes){  // ==[]
             return;
         }
         else {

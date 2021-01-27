@@ -5,6 +5,7 @@
     width: 16.66rem;
     margin: 0rem .5rem 2.3rem .5rem;
     box-shadow: none;
+    color: black;
 }
 
 .restaurant .image-container {
@@ -75,4 +76,8 @@
     font-weight: 300;
     line-height: 1rem;
     box-shadow: none;
+}
+.recipe-information a {
+    color:black;
+    text-decoration: underline;
 }

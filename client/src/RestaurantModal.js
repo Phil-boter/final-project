@@ -15,12 +15,10 @@ render() {
                     <div className="recipe-modal-content">
                         
                         <div className="restaurant">
-                                <div>           
-                                    <p className="recipe-close-modal" onClick={this.props.closeShowRestaurant}>close</p>
-                                </div>    
-                            <div className="image-container">                   
-                                <a href={this.props.business.url} target="_blank"><img className="recipe-modal-image" src={this.props.business.imageSrc} alt="" /></a>
-                            </div>    
+                        <div>           
+                            <p className="recipe-close-modal" onClick={this.props.closeShowRestaurant}>close</p>
+                        </div>                                         
+                            <a href={this.props.business.url} target="_blank"><img className="recipe-modal-image" src={this.props.business.imageSrc} alt="" /></a>                            
                             <h2>{this.props.business.name}</h2>
                             {this.props.renderPhone}               
                             <div className="restaurant-information">

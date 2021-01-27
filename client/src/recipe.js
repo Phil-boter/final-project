@@ -33,12 +33,12 @@ export default class Recipe extends Component {
     }
 
     renderCautions() {
-        if(!this.props.recipe.recipe.cautions){
+        if(!this.props.recipe.recipe.cautions || this.props.recipe.recipe.cautions.length == "0"){
             return;
         }
         else {
             return (
-            <p>Cautions: {`${this.props.recipe.recipe.cautions} `}</p>
+            <p>Cautions: {` ${this.props.recipe.recipe.cautions} `} </p>
             );
         }
     }
@@ -93,8 +93,8 @@ export default class Recipe extends Component {
                                 key={this.index}
                                 closeShowRecipe={this.closeShowRecipe}
                                 renderYield={this.renderYield}
-                                renderTime={this.renderTime}
-                                renderCautions={this.renderCautions}
+                                renderTime={this.renderTime()}
+                                renderCautions={this.renderCautions()}
                             />
                                                 
                         )}

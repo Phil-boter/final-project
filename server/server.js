@@ -249,9 +249,10 @@ app.get("/logout", (req, res) => {
 app.post("/saveFavorite", (req, res) =>{
     console.log("post saveFavorite");
     console.log("req.body.recipe", req.body.recipe);
-
+    console.log("req.session:", req.session.userId);
     const { uri, label, url, source, image } = req.body.recipe;
-    db.saveFavoriteRecipe(uri, label, url, source, image)
+    let userId = req.session.userId;
+    db.saveFavoriteRecipe(uri, label, url, source, image, userId)
         .then(res =>{
             res.json({
                 success: true,
