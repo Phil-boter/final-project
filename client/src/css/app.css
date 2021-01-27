@@ -22,7 +22,7 @@ input:focus {
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    background: #000;
+    background: white;
 }
   
 .image-container img {

@@ -15,25 +15,11 @@ export default class SearchBarYelp extends React.Component {
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
-        this.handleSortByChange = this.handleSortByChange.bind(this);
 
-        this.sortByOptions = {
-            "Best Match": "best_match",
-            "Highest Rated": "rating",
-            "Most Reviewed": "review_count"
-        };
     }
 
-    // getSortByClass(sortByOption) {
-    //     if (this.state.sortBy === sortByOption) {
-    //         return "active";
-    //     }
-    //         return "";
-    // }
 
-    handleSortByChange(sortByOption) {
-        this.setState({sortBy: sortByOption});
-    }
+
 
     handleTermChange(event) {    
 
@@ -53,16 +39,6 @@ export default class SearchBarYelp extends React.Component {
         event.preventDefault();
     }
 
-    // renderSortByOptions() {
-    //     return Object.keys(this.sortByOptions).map(sortByOption => {
-    //         let sortByOptionValue = this.sortByOptions[sortByOption];
-    //         return (<li className={this.getSortByClass(sortByOptionValue)}
-    //                 key={sortByOptionValue}
-    //                 onClick={this.handleSortByChange}>
-    //               {sortByOption}
-    //               </li>);
-    //     });
-    // }
 
     render() {
         return (
@@ -70,11 +46,6 @@ export default class SearchBarYelp extends React.Component {
                 <div className="SearchBar-header">
                     <h2>Still no Inspiration? Find a restaurant near your place!</h2>
                 </div>
-                {/* <div className="SearchBar-sort-options">
-                    <ul>
-                        {this.renderSortByOptions()}
-                    </ul>
-                </div> */}
                 <div className="SearchBar-fields">
                     <input className="field-left" placeholder="Search for Restaurants" onChange={this.handleTermChange} />
                     <input className="field-right" placeholder="City and zip-code" onChange={this.handleLocationChange}/>

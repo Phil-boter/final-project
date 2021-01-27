@@ -73,25 +73,11 @@ export default class Recipe extends Component {
     render() {
         return (
                 <>                       
-
-
                     <div className="restaurant" onClick={e => this.toggleShowRecipe()}>
                         <div className="image-container">                   
                             <img className="recipecard-img" src={this.props.recipe.recipe.image} alt="" />
-                            {/* <a href={this.props.recipe.recipe.url} target="_blank"><img className="recipecard-img" src={this.props.recipe.recipe.image} alt="" /></a> */}
                         </div>    
                         <h2>{this.props.recipe.recipe.label}</h2>               
-                        {/* <ol className="recipecard-ingredients">
-                            {this.props.recipe.recipe.ingredients.map((ingredient, index) => ( 
-                                <li key={index}>{ingredient.text}</li>
-                            ))}
-                        </ol>
-                        <div className="recipe-information">
-                            <p>Instructions on &nbsp; <a href={this.props.recipe.recipe.url} target="_blank">{this.props.recipe.recipe.source}</a></p>
-                        </div>
-                        <div className="recipe-information">
-                            {this.renderYield()} 
-                        </div>  */}
                         <div className="recipe-information">
                             {this.renderTime()} 
                         </div> 
@@ -100,23 +86,21 @@ export default class Recipe extends Component {
                         </div> 
                     </div>
                     <div> 
-                                        {this.state.showRecipeIsVisible && (
+                        {this.state.showRecipeIsVisible && (
                                         
-                                                <RecipeModal
-                                                    recipe={this.props.recipe}
-                                                    key={this.index}
-                                                    closeShowRecipe={this.closeShowRecipe}
-                                                    renderYield={this.renderYield}
-                                                    renderTime={this.renderTime}
-                                                    renderCautions={this.renderCautions}
-                                                />
+                            <RecipeModal
+                                recipe={this.props.recipe}
+                                key={this.index}
+                                closeShowRecipe={this.closeShowRecipe}
+                                renderYield={this.renderYield}
+                                renderTime={this.renderTime}
+                                renderCautions={this.renderCautions}
+                            />
                                                 
-                                        )}
-                                    </div>
+                        )}
+                    </div>
 
                 </>           
         );
     }
 };
-
-// onClick={props.toggleShowRecipe} 

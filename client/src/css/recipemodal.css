@@ -22,12 +22,13 @@
     background-color: white;
     border-radius: 15px;
     animation: appear 2s ;
-    overflow: scroll;
+    overflow: auto;
 }
+
 .recipe-modal-image {
-    width: 300px;
-    min-height: 300px !important;
-    /* object-fit: cover; */
+    text-align: center;
+    width: 250px;
+    object-fit: cover;
 }
 
 @keyframes appear {
@@ -47,6 +48,7 @@
     text-decoration: none;
     color: black;
     z-index: 300;
+    cursor: pointer;
 }
 
 

@@ -2,7 +2,7 @@ import { Component } from "react";
 import axios from "./axios";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import RecipesList from "./recipeslist";
+import RecipeList from "./recipelist";
 import Navbar from "./navbar";
 import Searchbar from "./searchbar";
 import RestaurantList from './RestaurantList';
@@ -102,21 +102,14 @@ export default class App extends Component {
                         exact
                         path="/"
                         render={()=>
-                            <RecipesList 
+                            <RecipeList 
                             setRecipe={this.setRecipe}
                             recipes={this.state.recipes}
                             />
                         }
                     >
                     </Route>
-                    {/* <Route 
-                        exact
-                        path="/"
-                        render={()=>  <RecipesList 
-                            setRecipe={this.setRecipe}
-                            recipes={this.state.recipes}                       
-                        /> }
-                    />   */}
+
                     <Route
                         path="/restaurant"
                         render={()=> 

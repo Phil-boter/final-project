@@ -3,12 +3,12 @@ import { Component } from "react";
 
 
 
-import "./css/recipeslist.css";
+import "./css/recipelist.css";
 import Recipe from "./recipe";
 
 
 
- export default class RecipesList extends Component{
+ export default class RecipeList extends Component{
 
     renderRecipes() {
         if(!this.props.recipes.recipes){
@@ -25,8 +25,7 @@ import Recipe from "./recipe";
                                     <Recipe 
                                         recipe={recipe}
                                         key={index} 
-                                        toggleShowRecipe={this.toggleShowRecipe}
-                                        
+                                        toggleShowRecipe={this.toggleShowRecipe}                                        
                                     />
                                     </div>
      
