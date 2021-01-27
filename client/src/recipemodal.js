@@ -1,6 +1,8 @@
 import React from "react";
 import { Component } from "react";
 import "./css/recipemodal.css"
+import SaveFavorites from "./saveFavorites";
+
 
 
 export default class RecipeModal extends Component {
@@ -20,8 +22,8 @@ render() {
                             <a href={this.props.recipe.recipe.url} target="_blank"><img className="recipe-modal-image" src={this.props.recipe.recipe.image} alt="" /></a>
                             <h2>{this.props.recipe.recipe.label}</h2>               
                             <ol className="recipecard-ingredients">
-                                {this.props.recipe.recipe.ingredients.map((ingredient, index) => ( 
-                                    <li key={index}>{ingredient.text}</li>
+                                {this.props.recipe.recipe.ingredients.map((ingredient, list) => ( 
+                                    <li key={list}>{ingredient.text}</li>
                                 ))}
                             </ol>
                             <div className="recipe-information">
@@ -36,6 +38,10 @@ render() {
                             <div className="recipe-information">  
                                 {this.props.renderCautions}
                             </div> 
+                            <SaveFavorites 
+                                 recipe={this.props.recipe}
+                            />
+                
                         </div>
                     </div> 
                 </div>                    

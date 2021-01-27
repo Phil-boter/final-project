@@ -63,7 +63,7 @@ render() {
             <>
                 <div className="SearchBar">
                 <div className="SearchBar-header">
-                    <h2>Today I might want to eat...</h2>
+                    <h2>Today I feel like eating...</h2>
                 </div>
                 {this.state.error && <h3 className="error">Ooops!! Something went wrong...</h3>}
                     <div className="SearchBar-fields">

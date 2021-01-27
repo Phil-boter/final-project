@@ -48,3 +48,9 @@ module.exports.getUserData = (id) => {
     const params = [id];
     return db.query(q, params);
 };
+
+module.exports.saveFavoriteRecipe = (uri, label, url, source, image) => {
+    const q = `INSERT INTO favorites (uri, label, url, source, image) VALUES ($1, $2, $3, $4, $5)`;
+    const params = [uri, label, url, source, image];
+    return db.query(q, params);
+};

@@ -1,8 +1,9 @@
 import React from "react";
 import "./css/SearchBar.css";
 import { Link } from "react-router-dom"
+import { Component } from "react";
 
-export default class SearchBarYelp extends React.Component {
+export default class SearchBarYelp extends Component {
     constructor(props) {
         super(props);
 

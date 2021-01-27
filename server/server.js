@@ -246,6 +246,24 @@ app.get("/logout", (req, res) => {
     res.redirect("/landingpage");
 });
 
+app.post("/saveFavorite", (req, res) =>{
+    console.log("post saveFavorite");
+    console.log("req.body.recipe", req.body.recipe);
+
+    const { uri, label, url, source, image } = req.body.recipe;
+    db.saveFavoriteRecipe(uri, label, url, source, image)
+        .then(res =>{
+            res.json({
+                success: true,
+            });
+        })
+        .catch(error => {
+            console.log("error in saveFavoriteRecipe", error);
+            res.json({ success: false });
+        })
+});
+
+
 // ------  api call dont touch--------------------------------------------------------------------------
 
 app.get("/api/getRecipe/:input", (req,res) => {

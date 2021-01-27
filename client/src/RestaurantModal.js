@@ -3,6 +3,7 @@ import { Component } from "react";
 import "./css/recipemodal.css"
 
 
+
 export default class RestaurantModal extends Component {
 componentDidMount() {
     console.log("this.props RestaurantModal", this.props);
@@ -33,7 +34,7 @@ render() {
                                     <h4 className="rating">{`${this.props.business.rating} stars`}</h4>
                                     <p>{`${this.props.business.reviewCount} reviews`}</p>
                                 </div>
-                    
+               
                             </div>
                         </div> 
                     </div>

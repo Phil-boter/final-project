@@ -4,66 +4,75 @@
     justify-content: space-between;
     width: 16.66rem;
     margin: 0rem .5rem 2.3rem .5rem;
-  
-  }
-  
-  .restaurant .image-container {
+    box-shadow: none;
+}
+
+.restaurant .image-container {
     height: 16.66rem;
     margin-bottom: 1rem;
-    
-  }
+    box-shadow: none;
+}
   
-  .restaurant h2 {
+.restaurant h2 {
     margin-bottom: .5rem;
     font-size: 1.2rem;
     font-weight: 600;
-  }
+    box-shadow: none;
+}
   
-  .restaurant-information {
+.restaurant-information {
     display: flex;
     justify-content: space-between;
-  }
+    box-shadow: none;
+}
   
-  .restaurant-information p {
+.restaurant-information p {
     font-size: .88rem;
     font-weight: 300;
     line-height: 1rem;
-  }
+    box-shadow: none;
+}
 
   
-  .restaurant-address {
+.restaurant-address {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+    box-shadow: none;
+}
   
-  .restaurant-reviews {
+.restaurant-reviews {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+    box-shadow: none;
+}
   
-  .restaurant-reviews h4 {
+.restaurant-reviews h4 {
     color: rgb(184, 78, 184);
     font-weight: 600;
-  }
+    box-shadow: none;
+}
   
-  .restaurant-reviews .rating {
+.restaurant-reviews .rating {
     font-size: .88rem;
     line-height: 1rem;
-  }
+    box-shadow: none;
+}
 
   /* ----- specuials for recipe */
 
-  .recipe-information {
+.recipe-information {
     display: flex;
     justify-content: space-between;
-  }
+    box-shadow: none;
+}
   
-  .recipe-information p {
+.recipe-information p {
     display: flex;
     justify-content: space-between;
     font-size: .88rem;
     font-weight: 300;
     line-height: 1rem;
-  }
+    box-shadow: none;
+}

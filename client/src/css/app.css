@@ -27,6 +27,7 @@ input:focus {
   
 .image-container img {
     width: 100%;
+    object-fit: contain;
 }
   
   /* App Styles */
@@ -67,7 +68,7 @@ h1 {
     font-size: 15px;
   }
     .background-image {
-      background-image: url("./eatSmall.jpg");
+      background-image: url("./iceSmall.jpg");
       background-position: 50% 0;
       background-position-y: -50px;
     }
