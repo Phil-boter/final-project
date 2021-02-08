@@ -5,16 +5,12 @@ import { BrowserRouter, Route } from "react-router-dom";
 import RecipeList from "./recipelist";
 import Navbar from "./navbar";
 import Searchbar from "./searchbar";
-import RestaurantList from './RestaurantList';
-import SearchBarYelp from './SearchBarYelp';
+import RestaurantList from "./RestaurantList";
+import SearchBarYelp from "./SearchBarYelp";
 
-import Yelp from './util/yelp';
+import Yelp from "./util/yelp";
 
-
-import './css/app.css';
-
-
-
+import "./css/app.css";
 
 export default class App extends Component {
     constructor(props) {
@@ -30,9 +26,8 @@ export default class App extends Component {
             showRecipeIsVisible: false,
         };
         this.setRecipe = this.setRecipe.bind(this);
-        this.searchYelp = this.searchYelp.bind(this);
-
-
+        // this.searchYelp = this.searchYelp.bind(this);
+        this.setRestaurant = this.setRestaurant.bind(this);
     }
 
     componentDidMount() {
@@ -61,8 +56,6 @@ export default class App extends Component {
         // });
     }
 
-
-
     setRecipe(data) {
         console.log("new recipe: ", data);
         this.setState({
@@ -71,17 +64,23 @@ export default class App extends Component {
         });
     }
 
-    searchYelp(term, location, sortBy) {
-        Yelp.search(term, location, sortBy).then(businesses => {
-          this.setState({businesses: businesses});
+    setRestaurant(data) {
+        console.log("new restaurnat", data);
+        this.setState({
+            businesses: data,
         });
-      }
+    }
+    // searchYelp(term, location, sortBy) {
+    //     Yelp.search(term, location, sortBy).then(businesses => {
+    //       this.setState({businesses: businesses});
+    //     });
+    //   }
 
     render() {
         console.log("recipes: ", this.state.recipes);
-  
-            return (
-                <BrowserRouter>
+
+        return (
+            <BrowserRouter>
                 <>
                     <div className="logo">
                         <img src="/logo.png" alt="" />
@@ -92,43 +91,45 @@ export default class App extends Component {
                     <Route
                         exact
                         path="/"
-                        render={()=>                     
-                        <div className="background-image">
-                            <Searchbar setRecipe = {this.setRecipe} />                      
-                        </div>}
-                    >
-                    </Route>
+                        render={() => (
+                            <div className="background-image">
+                                <Searchbar setRecipe={this.setRecipe} />
+                            </div>
+                        )}
+                    ></Route>
                     <Route
                         exact
                         path="/"
-                        render={()=>
-                            <RecipeList 
-                            setRecipe={this.setRecipe}
-                            recipes={this.state.recipes}
+                        render={() => (
+                            <RecipeList
+                                setRecipe={this.setRecipe}
+                                recipes={this.state.recipes}
                             />
-                        }
-                    >
-                    </Route>
+                        )}
+                    ></Route>
 
                     <Route
                         path="/restaurant"
-                        render={()=> 
+                        render={() => (
                             <div className="background-image">
-                            <SearchBarYelp 
-                                searchYelp={this.searchYelp} />
-                            </div>                                
-                         }>
-                    </Route>
+                                <SearchBarYelp
+                                    // searchYelp={this.searchYelp}
+                                    setRestaurant={this.setRestaurant}
+                                />
+                            </div>
+                        )}
+                    ></Route>
                     <Route
                         path="/restaurant"
-                        render={()=> 
-                            <RestaurantList businesses={this.state.businesses} />
-                        }    
-                    >                        
-                    </Route>
-
-                </> 
-                </BrowserRouter>   
-            );   
+                        render={() => (
+                            <RestaurantList
+                                businesses={this.state.businesses}
+                                setRestaurant={this.setRestaurant}
+                            />
+                        )}
+                    ></Route>
+                </>
+            </BrowserRouter>
+        );
     }
 }

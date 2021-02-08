@@ -1,49 +1,35 @@
 import React from "react";
 import { Component } from "react";
 
-
-
 import "./css/recipelist.css";
 import Recipe from "./recipe";
 
-
-
- export default class RecipeList extends Component{
-
+export default class RecipeList extends Component {
     renderRecipes() {
-        if(!this.props.recipes.recipes){  // ==[]
+        if (!this.props.recipes.recipes) {
             return;
-        }
-        else {
+        } else {
             return (
                 <div className="list">
-                    {
-                        this.props.recipes.recipes.map((recipe, index) => { 
-                            return (
-                                <>
-                                    <div>
-                                    <Recipe 
+                    {this.props.recipes.recipes.map((recipe, index) => {
+                        return (
+                            <>
+                                <div>
+                                    <Recipe
                                         recipe={recipe}
-                                        key={index} 
-                                        toggleShowRecipe={this.toggleShowRecipe}                                        
+                                        key={index}
+                                        toggleShowRecipe={this.toggleShowRecipe}
                                     />
-                                    </div>
-     
-                                </>
-                            );
-                        })
-                    }
+                                </div>
+                            </>
+                        );
+                    })}
                 </div>
-            )
+            );
         }
     }
 
     render() {
-        return (
-
-            <div>
-                {this.renderRecipes()}                  
-            </div>                   
-       );
+        return <div>{this.renderRecipes()}</div>;
     }
-};
+}
