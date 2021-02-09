@@ -8,8 +8,6 @@ import Searchbar from "./searchbar";
 import RestaurantList from "./RestaurantList";
 import SearchBarYelp from "./SearchBarYelp";
 
-import Yelp from "./util/yelp";
-
 import "./css/app.css";
 
 export default class App extends Component {
@@ -70,11 +68,6 @@ export default class App extends Component {
             businesses: data,
         });
     }
-    // searchYelp(term, location, sortBy) {
-    //     Yelp.search(term, location, sortBy).then(businesses => {
-    //       this.setState({businesses: businesses});
-    //     });
-    //   }
 
     render() {
         console.log("recipes: ", this.state.recipes);
@@ -113,7 +106,6 @@ export default class App extends Component {
                         render={() => (
                             <div className="background-image">
                                 <SearchBarYelp
-                                    // searchYelp={this.searchYelp}
                                     setRestaurant={this.setRestaurant}
                                 />
                             </div>

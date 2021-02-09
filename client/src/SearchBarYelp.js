@@ -26,39 +26,6 @@ export default class SearchBarYelp extends Component {
         this.setState({ location: event.target.value });
     }
 
-    // console.log("input restaurnat:", req.params.input);
-    // const apiKey = secrets.apiKey;
-    // let response;
-    // async function search(term, location, sortBy) {
-    //     try {
-    //         response = await axios.get(
-    //             `https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`,
-    //             {
-    //                 headers: {
-    //                     Authorization: `Bearer ${apiKey}`,
-    //                 },
-    //             }
-    //         );
-    //     } catch (error) {
-    //         console.log("error in yelp", error);
-    //         response.json({ success: false });
-    //     }
-    //     console.log("yelp res", response);
-    //     return response;
-    // }
-    // search(term, location, sortBy);t.target.value });
-    // }
-
-    // handleSearch(event) {
-    //     this.props.searchYelp(
-    //         this.state.term,
-    //         this.state.location,
-    //         this.state.sortBy
-    //     );
-
-    //     event.preventDefault();
-    // }
-
     handleSearch() {
         console.log("click yelp searchbar");
         console.log("state submit", this.state);

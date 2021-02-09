@@ -18,9 +18,31 @@ export default class Restaurant extends Component {
     }
     renderPhone() {
         if (!this.props.business.phone) {
-            return <p>Phone: none provided</p>;
+            return (
+                <>
+                    <p>Phone:</p>
+                    <p>none provided</p>
+                </>
+            );
         } else {
-            return <p>Phone: {this.props.business.phone}</p>;
+            return (
+                <>
+                    <h4>Phone:</h4>
+                    {this.props.business.phone}
+                </>
+            );
+        }
+    }
+    renderPrice() {
+        if (!this.props.business.price) {
+            return;
+        } else {
+            return (
+                <>
+                    <h4>Price:</h4>
+                    {this.props.business.price}
+                </>
+            );
         }
     }
 
@@ -53,17 +75,20 @@ export default class Restaurant extends Component {
                     </div>
                     <h2>{this.props.business.name}</h2>
                     <div className="recipe-information">
-                        <p>
-                            Category:
-                            {this.props.business.categories.map((category) => {
-                                return <p>{category.title}</p>;
-                            })}
-                        </p>
+                        <h4>Category:</h4>
+                        <ul>
+                            {this.props.business.categories.map(
+                                (category, index) => {
+                                    return (
+                                        <li key={index}>{category.title}</li>
+                                    );
+                                }
+                            )}
+                        </ul>
                     </div>
                     <div className="recipe-information">
-                        <p className="rating">
-                            Ratings: {`${this.props.business.rating} stars`}
-                        </p>
+                        <h4 className="rating">Rating:</h4>
+                        <p>{`${this.props.business.rating} stars`}</p>
                     </div>
                 </div>
                 <div>
@@ -73,6 +98,7 @@ export default class Restaurant extends Component {
                             key={this.props.business.id}
                             closeShowRestaurant={this.closeShowRestaurant}
                             renderPhone={this.renderPhone()}
+                            renderPrice={this.renderPrice()}
                         />
                     )}
                 </div>

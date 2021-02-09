@@ -10,25 +10,24 @@
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-    color:black;
+    color: black;
 }
 
 .recipe-modal-content {
     justify-content: center;
-    display:flex;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 40vw;
+    display: flex;
+    margin: 2rem auto;
+    width: 60vw;
     background-color: white;
     border-radius: 15px;
-    animation: appear 2s ;
+    animation: appear 2s;
     overflow: auto;
 }
 
 .recipe-modal-image {
-
     width: 300px;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 @keyframes appear {
@@ -45,12 +44,13 @@
     float: right;
     top: 0;
     margin: 0.5rem;
+    right: -1rem;
     text-decoration: none;
     color: black;
     z-index: 300;
     cursor: pointer;
 }
-.recipe-close-modal:active{
+.recipe-close-modal:active {
     animation: fadeOut 1s;
 }
 @keyframes fadeOut {
@@ -62,7 +62,6 @@
     }
 }
 
-
 @media only screen and (max-width: 560px) {
     .recipe-modal-content {
         margin-top: 2rem;
@@ -70,7 +69,10 @@
         min-width: 25vw;
         background-color: white;
         border-radius: 10px;
-        animation: appear 2s ;
+        animation: appear 2s;
     }
-
+    .recipe-modal-image {
+        width: 250px;
+        object-fit: cover;
+    }
 }
