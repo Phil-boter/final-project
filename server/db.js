@@ -60,3 +60,7 @@ module.exports.saveFavoriteRecipe = (
     const params = [uri, label, url, source, image, ingredient];
     return db.query(q, params);
 };
+module.exports.getFavoriteRecipe = () => {
+    const q = `SELECT * FROM favorites`;
+    return db.query(q);
+};

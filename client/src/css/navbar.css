@@ -1,43 +1,43 @@
 .nav-container {
     position: absolute;
+    top: 0;
     width: 100vw;
     background-color: black;
-    color:ghostwhite;
+    color: ghostwhite;
     display: flex;
     flex-flow: row-reverse wrap;
     text-decoration: none;
     justify-content: center;
     z-index: 2;
-    height: 50px;
+    height: 60px;
 }
 
 .logo {
-   position: absolute;
-   left:0;
+    position: absolute;
+    left: 0;
 }
-.logo img {
-    height: 80px;
-    width: 80px;
-}
-.nav-links li, a {
+.nav-links li,
+a {
     text-decoration: none;
     color: ghostwhite;
     list-style: none;
     display: inline-flex;
     margin-left: 3rem;
-    margin-right: .3rem;
+    margin-right: 0.3rem;
 }
 
-@media only screen and (max-width: 560px){
-    .nav-links li, a {
+@media only screen and (max-width: 560px) {
+    .nav-links li,
+    a {
         text-decoration: none;
         color: black;
         font-size: 1rem;
         font-weight: 800;
-        margin-left: .7rem;
-        margin-right: .3rem;
+        margin-left: 0.7rem;
+        margin-right: 0.3rem;
     }
-    .nav-container{
+    .nav-container {
         background-color: white;
+        height: 50px;
     }
 }

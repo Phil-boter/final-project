@@ -247,6 +247,22 @@ app.post("/saveFavorite", (req, res) => {
         });
 });
 
+app.get("/getFavoriteRecipe", (req, res) => {
+    console.log("getRecipe");
+    db.getFavoriteRecipe()
+        .then(({ rows }) => {
+            console.log("rows", rows);
+            res.json({
+                success: true,
+                favoriteRecipe: rows,
+            });
+        })
+        .catch((error) => {
+            console.log("error in getFavoriteRecipe", error);
+            res.json({ success: false });
+        });
+});
+
 // ------  api call dont touch--------------------------------------------------------------------------
 
 app.get("/api/getRecipe/:input", (req, res) => {

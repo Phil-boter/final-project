@@ -1,14 +1,17 @@
 import { Component } from "react";
 import axios from "./axios";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import RecipeList from "./recipelist";
-import Navbar from "./navbar";
+// import Navbar from "./navbar";
 import Searchbar from "./searchbar";
 import RestaurantList from "./RestaurantList";
 import SearchBarYelp from "./SearchBarYelp";
+import FavoriteRecipe from "./favoriteRecipe";
 
 import "./css/app.css";
+import "./css/navbar.css";
 
 export default class App extends Component {
     constructor(props) {
@@ -21,6 +24,7 @@ export default class App extends Component {
             bio: "",
             recipes: [],
             businesses: [],
+            favoriteRecipe: [],
             showRecipeIsVisible: false,
         };
         this.setRecipe = this.setRecipe.bind(this);
@@ -30,6 +34,20 @@ export default class App extends Component {
 
     componentDidMount() {
         console.log("component did mount");
+
+        axios.get("/getFavoriteRecipe").then(({ data }) => {
+            if (data.success) {
+                console.log("data", data);
+                this.setState({
+                    success: true,
+                    favoriteRecipe: data.favoriteRecipe,
+                });
+            } else {
+                this.setState({
+                    error: true,
+                });
+            }
+        });
 
         // axios.get("/user")
         //     .then(({data})=> {
@@ -70,15 +88,32 @@ export default class App extends Component {
     }
 
     render() {
-        console.log("recipes: ", this.state.recipes);
+        console.log("state in app: ", this.state);
 
         return (
             <BrowserRouter>
                 <>
-                    <div className="logo">
-                        <img src="/logo.png" alt="" />
+                    <div className="nav-container">
+                        <div className="logo">
+                            <img src="/logo.png" alt="" />
+                        </div>
+
+                        <div>
+                            <ul className="nav-links">
+                                <li>
+                                    <Link to="/favoriteRecipe">Recipe</Link>
+                                </li>
+                                <li>
+                                    <Link to="favoriteRestaurant">
+                                        Restaurants
+                                    </Link>
+                                </li>
+                                <li>
+                                    <a href="/logout">logout</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <Route render={() => <Navbar />} />
                     <Route
                         exact
                         path="/"
@@ -115,6 +150,14 @@ export default class App extends Component {
                             <RestaurantList
                                 businesses={this.state.businesses}
                                 setRestaurant={this.setRestaurant}
+                            />
+                        )}
+                    ></Route>
+                    <Route
+                        path="/favoriteRecipe"
+                        render={() => (
+                            <FavoriteRecipe
+                                favoriteRecipe={this.state.favoriteRecipe}
                             />
                         )}
                     ></Route>
