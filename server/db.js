@@ -1,19 +1,18 @@
-const spicedPg = require('spiced-pg');
-const db = spicedPg(process.env.DATABASE_URL || 'postgres:postgres:postgres@localhost:5432/final');
-
-
+const spicedPg = require("spiced-pg");
+const db = spicedPg(
+    process.env.DATABASE_URL ||
+        "postgres:postgres:postgres@localhost:5432/final"
+);
 
 //------------------ users-database-------------------------
 
-
-module.exports.addUser = (first, last, email, hashed_password) => { 
+module.exports.addUser = (first, last, email, hashed_password) => {
     const q = `INSERT INTO users (first, last, email, password) VALUES ($1, $2, $3, $4) RETURNING id`;
-    const params =  [first, last, email, hashed_password];
+    const params = [first, last, email, hashed_password];
     return db.query(q, params);
 };
 
-
-module.exports.getHashedPassword = email =>{
+module.exports.getHashedPassword = (email) => {
     const q = `SELECT password, id FROM users WHERE email = $1`;
     const params = [email];
     return db.query(q, params);
@@ -49,8 +48,15 @@ module.exports.getUserData = (id) => {
     return db.query(q, params);
 };
 
-module.exports.saveFavoriteRecipe = (uri, label, url, source, image, userId) => {
-    const q = `INSERT INTO favorites (uri, label, url, source, image) VALUES ($1, $2, $3, $4, $5) WHERE id = $6 RETURNING * `;
-    const params = [uri, label, url, source, image, userId];
+module.exports.saveFavoriteRecipe = (
+    uri,
+    label,
+    url,
+    source,
+    image,
+    ingredient
+) => {
+    const q = `INSERT INTO favorites (uri, label, url, source, image, ingredient) VALUES ($1, $2, $3, $4, $5, $6) RETURNING * `;
+    const params = [uri, label, url, source, image, ingredient];
     return db.query(q, params);
 };

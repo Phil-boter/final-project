@@ -78,9 +78,7 @@ export default class App extends Component {
                     <div className="logo">
                         <img src="/logo.png" alt="" />
                     </div>
-                    {/* <Route 
-                        render={()=>  <Navbar />  }
-                    />       */}
+                    <Route render={() => <Navbar />} />
                     <Route
                         exact
                         path="/"

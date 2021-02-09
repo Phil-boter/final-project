@@ -7,5 +7,6 @@
       url VARCHAR(255) NOT NULL,
       source VARCHAR(255) NOT NULL,
       image VARCHAR(255),
+      ingredient TEXT[],
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );

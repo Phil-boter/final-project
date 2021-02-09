@@ -225,14 +225,18 @@ app.get("/logout", (req, res) => {
     res.redirect("/landingpage");
 });
 
+// -------------  save Recipe ------------------------
+
 app.post("/saveFavorite", (req, res) => {
     console.log("post saveFavorite");
     console.log("req.body.recipe", req.body.recipe);
-    console.log("req.session:", req.session.userId);
+    console.log("req.body.ingredient", req.body.ingredient);
+    console.log("req query", req.query);
+    // console.log("req.session:", req.session.userId);
     const { uri, label, url, source, image } = req.body.recipe;
-    let userId = req.session.userId;
-    db.saveFavoriteRecipe(uri, label, url, source, image, userId)
-        .then((res) => {
+    //let userId = req.session.userId;
+    db.saveFavoriteRecipe(uri, label, url, source, image, req.body.ingredient)
+        .then(() => {
             res.json({
                 success: true,
             });

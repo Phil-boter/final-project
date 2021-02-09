@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import "./css/recipemodal.css";
 import "./css/Restaurant.css";
-// import SaveFavorites from "./saveFavorites";
+import SaveFavorites from "./saveFavorites";
 
 export default class RecipeModal extends Component {
     componentDidMount() {
@@ -44,15 +44,13 @@ export default class RecipeModal extends Component {
                                 )}
                             </ol>
                             <div className="recipe-information">
-                                <p>
-                                    Instructions on:
-                                    <a
-                                        href={this.props.recipe.recipe.url}
-                                        target="_blank"
-                                    >
-                                        {this.props.recipe.recipe.source}
-                                    </a>
-                                </p>
+                                <h4>Recipe on:</h4>
+                                <a
+                                    href={this.props.recipe.recipe.url}
+                                    target="_blank"
+                                >
+                                    {this.props.recipe.recipe.source}
+                                </a>
                             </div>
                             <div className="recipe-information">
                                 {this.props.renderYield}
@@ -63,9 +61,9 @@ export default class RecipeModal extends Component {
                             <div className="recipe-information">
                                 {this.props.renderCautions}
                             </div>
-                            {/* <SaveFavorites 
-                                 recipe={this.props.recipe}
-                            /> */}
+                            <div className="button-fav">
+                                <SaveFavorites recipe={this.props.recipe} />
+                            </div>
                         </div>
                     </div>
                 </div>
