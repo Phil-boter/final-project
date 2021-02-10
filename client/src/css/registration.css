@@ -5,7 +5,13 @@
     align-items: center;
 }
 .reg input {
-    margin: 0.7rem;
+    margin: 0.3rem 1rem;
+    width: 21rem;
+    padding: 0.66rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 0.77rem;
+    font-weight: 500;
 }
 .reg-button {
     margin: 1.5rem;
