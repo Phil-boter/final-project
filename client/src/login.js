@@ -1,7 +1,9 @@
 import { Component } from "react";
-import axios from "./axios"; 
-import { Link } from 'react-router-dom';
+import axios from "./axios";
+import { Link } from "react-router-dom";
 
+import "./css/SearchBar.css";
+import "./css/login.css";
 
 export default class Login extends Component {
     constructor() {
@@ -11,58 +13,74 @@ export default class Login extends Component {
         };
     }
 
-    handleChange(e) { 
+    handleChange(e) {
         console.log("event object name", e.target.name);
         console.log("event object value", e.target.value);
-        this.setState({
-            [e.target.name] : e.target.value,
-        },
-        () => console.log("this.state in handleChange", this.state) 
+        this.setState(
+            {
+                [e.target.name]: e.target.value,
+            },
+            () => console.log("this.state in handleChange", this.state)
         );
     }
 
     handleClick() {
         console.log("click");
         console.log("state submit", this.state);
-        axios.post("/login", this.state)
-        .then(({data}) => {
+        axios.post("/login", this.state).then(({ data }) => {
             console.log("data", data);
-            if(data.success) {
+            if (data.success) {
                 location.replace("/");
-            }
-            else {
+            } else {
                 this.setState({
-                    error: true
+                    error: true,
                 });
             }
-        })
+        });
     }
 
     render() {
         return (
-            <div className="input-section">
-                <div> 
-                    {this.state.error && <h3 className="error">Ooops!! Something went wrong...</h3>}
-                    <h1 className="registration-headline">Login</h1>
+            <div className="SearchBar">
+                <div className="SearchBar-header">
+                    <h1>Login</h1>
+                </div>
+                {this.state.error && (
+                    <h3 className="error">Ooops!! Something went wrong...</h3>
+                )}
+                <div className="SearchBar-fields">
+                    <input
+                        className="field-left"
+                        type="text"
+                        name="email"
+                        placeholder="Email"
+                        onChange={(e) => this.handleChange(e)}
+                    ></input>
+                    <input
+                        className="field-right"
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        onChange={(e) => this.handleChange(e)}
+                    ></input>
+                </div>
+                <div className="SearchBar-submit">
+                    <button
+                        className="login-button"
+                        onClick={() => this.handleClick()}
+                    >
+                        Go
+                    </button>
+                </div>
+                <div className="SearchBar-header log">
+                    <h4 className="SearchBar-next Switch">
+                        <Link to="/reset">Forgot your password?</Link>
+                    </h4>
 
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder="Email"
-                            onChange={(e) => this.handleChange(e)}
-                        ></input>
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            onChange={(e) => this.handleChange(e)}
-                        ></input>
-                        
-                        <button onClick={()=> this.handleClick()}>login</button>
-                        <p className="register-link">Forgot your password? <Link to="/reset">Click here</Link></p>               
-                        <p className="register-link">Not a member? <Link to="/">Registration</Link></p>
-                </div>  
-                   
+                    <h4 className="SearchBar-next Switch">
+                        <Link to="/">Not a member?</Link>
+                    </h4>
+                </div>
             </div>
         );
     }

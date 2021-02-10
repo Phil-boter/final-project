@@ -8,5 +8,6 @@
       source VARCHAR(255) NOT NULL,
       image VARCHAR(255),
       ingredient TEXT[],
+      userId INT REFERENCES users(id) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );

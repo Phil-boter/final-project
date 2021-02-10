@@ -87,13 +87,13 @@ export default class Searchbar extends Component {
                         <div className="SearchBar-next">
                             <h3>Still no Inspiration?</h3>
                         </div>
-                        <div>
-                            <Link to="/restaurant">
-                                <button className="Switch">
-                                    Get more Inspiration
-                                </button>
-                            </Link>
-                        </div>
+                    </div>
+                    <div className="Switch-container">
+                        <Link to="/restaurant">
+                            <button className="Switch">
+                                Get more Inspiration
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </>

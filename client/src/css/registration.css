@@ -1,0 +1,25 @@
+.reg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.reg input {
+    margin: 0.7rem;
+}
+.reg-button {
+    margin: 1.5rem;
+}
+.register h1 {
+    font-size: 6rem;
+    margin: 2rem;
+}
+@media only screen and (max-width: 560px) {
+    .reg {
+        flex-direction: column;
+    }
+    .register h1 {
+        font-size: 4rem;
+        margin: 1rem;
+    }
+}

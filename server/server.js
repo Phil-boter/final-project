@@ -133,7 +133,8 @@ app.post("/login", (req, res) => {
 app.post("/password/reset/start", (req, res) => {
     console.log("post reset/start");
     console.log("email", req.body);
-    db.getUserByEmail(req.body.email)
+    const { email } = req.body;
+    db.getUserByEmail(email)
         .then(({ rows }) => {
             const secretCode = cryptoRandomString({
                 length: 6,
@@ -232,10 +233,18 @@ app.post("/saveFavorite", (req, res) => {
     console.log("req.body.recipe", req.body.recipe);
     console.log("req.body.ingredient", req.body.ingredient);
     console.log("req query", req.query);
-    // console.log("req.session:", req.session.userId);
+    console.log("req.session:", req.session.userId);
     const { uri, label, url, source, image } = req.body.recipe;
-    //let userId = req.session.userId;
-    db.saveFavoriteRecipe(uri, label, url, source, image, req.body.ingredient)
+    let userId = req.session.userId;
+    db.saveFavoriteRecipe(
+        uri,
+        label,
+        url,
+        source,
+        image,
+        req.body.ingredient,
+        userId
+    )
         .then(() => {
             res.json({
                 success: true,
@@ -249,7 +258,8 @@ app.post("/saveFavorite", (req, res) => {
 
 app.get("/getFavoriteRecipe", (req, res) => {
     console.log("getRecipe");
-    db.getFavoriteRecipe()
+    let userId = req.session.userId;
+    db.getFavoriteRecipe(userId)
         .then(({ rows }) => {
             console.log("rows", rows);
             res.json({
@@ -259,6 +269,24 @@ app.get("/getFavoriteRecipe", (req, res) => {
         })
         .catch((error) => {
             console.log("error in getFavoriteRecipe", error);
+            res.json({ success: false });
+        });
+});
+
+app.post("/deleteFavRecipe", (req, res) => {
+    console.log("post deleteFavRecipe");
+    console.log("req params", req.params);
+    console.log("req body", req.body);
+    console.log("req query", req.query);
+    console.log("req session", req.session);
+    const { id } = req.body;
+    const { userId } = req.session;
+    db.deleteRecipe(id, userId)
+        .then(() => {
+            res.json({ success: true });
+        })
+        .catch((error) => {
+            console.log("error in deleteFavRecipe", error);
             res.json({ success: false });
         });
 });

@@ -1,6 +1,8 @@
 import { Component } from "react";
 import axios from "./axios";
 import { Link } from "react-router-dom";
+import "./css/favoriteRecipe.css";
+import DeleteFavRecipeButton from "./deleteFavrecipeButton";
 
 export default class FavoriteRecipe extends Component {
     constructor() {
@@ -11,51 +13,61 @@ export default class FavoriteRecipe extends Component {
     }
     componentDidMount() {
         console.log("component did mount favorite");
-        console.log("props in favoriteRecipe", this.props);
+        console.log("state in favoriteRecipe", this.state);
+        axios.get("/getFavoriteRecipe").then(({ data }) => {
+            if (data.success) {
+                console.log("data", data);
+                this.setState({
+                    success: true,
+                    favoriteRecipe: data.favoriteRecipe,
+                });
+            } else {
+                this.setState({
+                    error: true,
+                });
+            }
+        });
     }
 
-    // handleClick() {
-    //     console.log("click");
-    //     console.log("state submit", this.state);
-    //     axios.post("/login", this.state).then(({ data }) => {
-    //         console.log("data", data);
-    //         if (data.success) {
-    //             location.replace("/");
-    //         } else {
-    //             this.setState({
-    //                 error: true,
-    //             });
-    //         }
-    //     });
-    // }
-
     renderFavRec() {
-        console.log("props in renderFavRec", this.props);
-        if (!this.props.favoriteRecipe) {
+        console.log("props in renderFavRec", this.state);
+        if (!this.state.favoriteRecipe) {
             return <h2>Sorry there is nothing saved in your favorites-list</h2>;
         } else {
             return (
                 <div className="list">
-                    {this.props.favoriteRecipe.map((favorite, index) => {
+                    {this.state.favoriteRecipe.map((favorite, list) => {
                         console.log("FAV", favorite);
                         return (
-                            <div key={index}>
-                                <h2>{favorite.label}</h2>
-                                <img src={favorite.image} />
-                                <li>{favorite.ingredient}</li>
+                            <div className="fav-ingreds">
+                                <div key={list} className="fav-ingreds-label">
+                                    <h2>{favorite.label}</h2>
+                                    <div className="image-container">
+                                        <a href={favorite.url} target="_blank">
+                                            <img src={favorite.image} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="recipe-information">
+                                    <h4>Recipe on:</h4>
+                                    <a href={favorite.url}>{favorite.source}</a>
+                                </div>
+                                <div className="fav-ingreds-list">
+                                    <ul>
+                                        {favorite.ingredient.map(
+                                            (list, bucket) => {
+                                                console.log("list", list);
+                                                return (
+                                                    <li key={bucket}>{list}</li>
+                                                );
+                                            }
+                                        )}
+                                    </ul>
+                                </div>
+                                <DeleteFavRecipeButton favorite={favorite} />
                             </div>
                         );
                     })}
-                    {/* <ol> */}
-                    {/* <li>{this.props.favoriteRecipe.ingredient}</li> */}
-
-                    {/* .map(
-                            (ingred, list) => {
-                                console.log("FAV ingredient", ingred);
-                                return <li key={list}>{ingred}</li>;
-                            }
-                        )} */}
-                    {/* </ol> */}
                 </div>
             );
         }
@@ -64,6 +76,20 @@ export default class FavoriteRecipe extends Component {
     render() {
         console.log("props in FAV", this.props);
         console.log("this.state in FAV", this.state);
-        return <>{this.renderFavRec()}</>;
+        return (
+            <>
+                {/* <div className="button-fav back">
+                    <Link to="/">
+                        <button>Back</button>
+                    </Link>
+                </div> */}
+                {this.renderFavRec()}
+                <div className="button-fav back">
+                    <Link to="/">
+                        <button>Back</button>
+                    </Link>
+                </div>
+            </>
+        );
     }
 }

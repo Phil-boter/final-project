@@ -1,0 +1,17 @@
+.log {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.log a {
+    color: black;
+    text-shadow: none;
+    margin: 0 auto;
+}
+.log h4 {
+    margin: 1rem 1rem;
+}
+.login-button {
+    text-align: center;
+}

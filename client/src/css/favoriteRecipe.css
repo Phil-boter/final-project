@@ -1,0 +1,17 @@
+.fav-ingreds {
+    margin: 2rem;
+}
+.fav-ingreds-label img {
+    width: 400px;
+}
+.back button {
+    width: 7rem;
+    height: 2.5rem;
+}
+.fav-ingreds-list li {
+    list-style: circle;
+    list-style-position: outside;
+}
+.fav-ingreds-list ul {
+    text-indent: 1rem;
+}

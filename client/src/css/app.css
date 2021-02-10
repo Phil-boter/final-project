@@ -22,11 +22,13 @@ input:focus {
     justify-content: center;
     overflow: hidden;
     background: white;
+    width: 100%;
 }
 
 .image-container img {
-    width: 100%;
-    object-fit: contain;
+    margin: 0 auto;
+    width: 300px;
+    object-fit: cover;
 }
 
 /* App Styles */
@@ -35,10 +37,14 @@ input:focus {
     font-family: "Julius Sans One", sans-serif;
 }
 
+.error {
+    text-align: center;
+}
+
 h1 {
     padding: 0.66rem 0;
     text-align: center;
-    font-family: "Megrim", cursive;
+    font-family: "Julius Sans One", sans-serif;
     font-size: 1.8rem;
     color: #fff;
 }
@@ -81,18 +87,10 @@ h1 {
         background-position: 50% 0;
         background-position-y: -150px;
     }
-    .logo img {
-        height: 100px;
-        width: 100px;
-    }
 }
 @media only screen and (min-width: 1550px) {
     .background-image {
         background-position: 50% 0;
         background-position-y: -650px;
-    }
-    .logo img {
-        height: 100px;
-        width: 100px;
     }
 }

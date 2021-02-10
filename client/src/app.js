@@ -33,43 +33,41 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        console.log("component did mount");
+        console.log("component did mount FAV");
 
-        axios.get("/getFavoriteRecipe").then(({ data }) => {
+        // axios.get("/getFavoriteRecipe").then(({ data }) => {
+        //     if (data.success) {
+        //         console.log("data", data);
+        //         this.setState({
+        //             success: true,
+        //             favoriteRecipe: data.favoriteRecipe,
+        //         });
+        //     } else {
+        //         this.setState({
+        //             error: true,
+        //         });
+        //     }
+        // });
+
+        axios.get("/user").then(({ data }) => {
             if (data.success) {
                 console.log("data", data);
                 this.setState({
                     success: true,
-                    favoriteRecipe: data.favoriteRecipe,
+                    id: data.id,
+                    first: data.first,
+                    last: data.last,
+                    image: data.image,
+                    bio: data.bio,
+                    uploaderIsVisible: false,
                 });
+                console.log("state", this.state);
             } else {
                 this.setState({
                     error: true,
                 });
             }
         });
-
-        // axios.get("/user")
-        //     .then(({data})=> {
-        //         if(data.success){
-        //             console.log("data",data);
-        //             this.setState({
-        //                 success: true,
-        //                 id: data.id,
-        //                 first: data.first,
-        //                 last: data.last,
-        //                 image: data.image,
-        //                 bio: data.bio,
-        //                 uploaderIsVisible: false,
-        //             });
-        //             console.log("state", this.state);
-        //         }
-        //         else {
-        //             this.setState({
-        //                 error: true
-        //             });
-        //         }
-        // });
     }
 
     setRecipe(data) {
@@ -101,11 +99,11 @@ export default class App extends Component {
                         <div>
                             <ul className="nav-links">
                                 <li>
-                                    <Link to="/favoriteRecipe">Recipe</Link>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li>
-                                    <Link to="favoriteRestaurant">
-                                        Restaurants
+                                    <Link to="/favoriteRecipe">
+                                        My Favorite Recipes
                                     </Link>
                                 </li>
                                 <li>

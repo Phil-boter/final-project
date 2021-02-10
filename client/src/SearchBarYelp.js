@@ -12,6 +12,7 @@ export default class SearchBarYelp extends Component {
             term: "",
             location: "",
             sortBy: "best_match",
+            error: false,
         };
         this.sendRestaurant = this.sendRestaurant.bind(this);
         this.handleTermChange = this.handleTermChange.bind(this);
@@ -69,6 +70,9 @@ export default class SearchBarYelp extends Component {
                         Still no Inspiration? Find a restaurant near your place!
                     </h2>
                 </div>
+                {this.state.error && (
+                    <h3 className="error">Ooops!! Something went wrong...</h3>
+                )}
                 <div className="SearchBar-fields">
                     <input
                         className="field-left"
@@ -88,11 +92,11 @@ export default class SearchBarYelp extends Component {
                     <div className="SearchBar-next">
                         <h3>Find your Inspiration for cooking!</h3>
                     </div>
-                    <div>
-                        <Link to="/">
-                            <button className="Switch">Get some recipes</button>
-                        </Link>
-                    </div>
+                </div>
+                <div className="Switch-container">
+                    <Link to="/">
+                        <button className="Switch">Get some recipes</button>
+                    </Link>
                 </div>
             </div>
         );

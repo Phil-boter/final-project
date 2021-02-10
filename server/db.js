@@ -54,13 +54,21 @@ module.exports.saveFavoriteRecipe = (
     url,
     source,
     image,
-    ingredient
+    ingredient,
+    userId
 ) => {
-    const q = `INSERT INTO favorites (uri, label, url, source, image, ingredient) VALUES ($1, $2, $3, $4, $5, $6) RETURNING * `;
-    const params = [uri, label, url, source, image, ingredient];
+    const q = `INSERT INTO favorites (uri, label, url, source, image, ingredient, userId) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * `;
+    const params = [uri, label, url, source, image, ingredient, userId];
     return db.query(q, params);
 };
-module.exports.getFavoriteRecipe = () => {
-    const q = `SELECT * FROM favorites`;
-    return db.query(q);
+module.exports.getFavoriteRecipe = (userId) => {
+    const q = `SELECT * FROM favorites WHERE userid = $1`;
+    const query = [userId];
+    return db.query(q, query);
+};
+
+module.exports.deleteRecipe = (id, userId) => {
+    const q = `DELETE FROM favorites WHERE (id = $1 AND userId = $2)`;
+    const query = [id, userId];
+    return db.query(q, query);
 };
