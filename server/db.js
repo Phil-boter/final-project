@@ -72,3 +72,14 @@ module.exports.deleteRecipe = (id, userId) => {
     const query = [id, userId];
     return db.query(q, query);
 };
+
+module.exports.deleteAccount = (userId) => {
+    const q = `DELETE FROM users WHERE id = $1`;
+    const query = [userId];
+    return db.query(q, query);
+};
+module.exports.deleteFavs = (userId) => {
+    const q = `DELETE FROM favorites WHERE userId = $1`;
+    const query = [userId];
+    return db.query(q, query);
+};

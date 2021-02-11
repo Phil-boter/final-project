@@ -14,13 +14,11 @@ export default class RecipeModal extends Component {
                 <div className="recipe-modal-container">
                     <div className="recipe-modal-content">
                         <div className="restaurant">
-                            <div>
-                                <p
-                                    className="recipe-close-modal"
-                                    onClick={this.props.closeShowRecipe}
-                                >
-                                    close
-                                </p>
+                            <div
+                                className="recipe-close-modal"
+                                onClick={this.props.closeShowRecipe}
+                            >
+                                <p>close</p>
                             </div>
                             <div>
                                 <a

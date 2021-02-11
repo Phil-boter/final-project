@@ -9,6 +9,8 @@ import Searchbar from "./searchbar";
 import RestaurantList from "./RestaurantList";
 import SearchBarYelp from "./SearchBarYelp";
 import FavoriteRecipe from "./favoriteRecipe";
+import Navbar from "./navbar";
+import DeleteAccount from "./deleteAccount";
 
 import "./css/app.css";
 import "./css/navbar.css";
@@ -26,10 +28,12 @@ export default class App extends Component {
             businesses: [],
             favoriteRecipe: [],
             showRecipeIsVisible: false,
+            navbarIsVisible: false,
         };
         this.setRecipe = this.setRecipe.bind(this);
         // this.searchYelp = this.searchYelp.bind(this);
         this.setRestaurant = this.setRestaurant.bind(this);
+        this.closeNavbar = this.closeNavbar.bind(this);
     }
 
     componentDidMount() {
@@ -69,6 +73,20 @@ export default class App extends Component {
             }
         });
     }
+    toggleNavbar(e) {
+        console.log("click toggle navbar");
+        this.setState({
+            navbarIsVisible: !this.state.navbarIsVisible,
+        });
+    }
+
+    closeNavbar(e) {
+        console.log("click close navbar");
+
+        this.setState({
+            navbarIsVisible: false,
+        });
+    }
 
     setRecipe(data) {
         console.log("new recipe: ", data);
@@ -95,21 +113,18 @@ export default class App extends Component {
                         <div className="logo">
                             <img src="/logo.png" alt="" />
                         </div>
-
-                        <div>
-                            <ul className="nav-links">
-                                <li>
-                                    <Link to="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link to="/favoriteRecipe">
-                                        My Favorite Recipes
-                                    </Link>
-                                </li>
-                                <li>
-                                    <a href="/logout">logout</a>
-                                </li>
-                            </ul>
+                        <div className="burger-menu">
+                            <h2 onClick={(e) => this.toggleNavbar(e)}>|||</h2>
+                            {this.state.navbarIsVisible && (
+                                <>
+                                    <Navbar
+                                        closeNavbar={this.closeNavbar}
+                                        navbarIsVisible={
+                                            this.state.navbarIsVisible
+                                        }
+                                    />
+                                </>
+                            )}
                         </div>
                     </div>
                     <Route
@@ -157,6 +172,16 @@ export default class App extends Component {
                             <FavoriteRecipe
                                 favoriteRecipe={this.state.favoriteRecipe}
                             />
+                        )}
+                    ></Route>
+                    <Route
+                        path="/deleteAccount"
+                        render={() => (
+                            <div className="background-image">
+                                <DeleteAccount
+                                    favoriteRecipe={this.state.favoriteRecipe}
+                                />
+                            </div>
                         )}
                     ></Route>
                 </>

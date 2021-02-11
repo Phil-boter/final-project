@@ -274,11 +274,11 @@ app.get("/getFavoriteRecipe", (req, res) => {
 });
 
 app.post("/deleteFavRecipe", (req, res) => {
-    console.log("post deleteFavRecipe");
-    console.log("req params", req.params);
-    console.log("req body", req.body);
-    console.log("req query", req.query);
-    console.log("req session", req.session);
+    // console.log("post deleteFavRecipe");
+    // console.log("req params", req.params);
+    // console.log("req body", req.body);
+    // console.log("req query", req.query);
+    // console.log("req session", req.session);
     const { id } = req.body;
     const { userId } = req.session;
     db.deleteRecipe(id, userId)
@@ -287,6 +287,27 @@ app.post("/deleteFavRecipe", (req, res) => {
         })
         .catch((error) => {
             console.log("error in deleteFavRecipe", error);
+            res.json({ success: false });
+        });
+});
+
+app.post("/deleteAccount", (req, res) => {
+    console.log("post delete Account");
+    console.log("req session", req.session);
+    const { userId } = req.session;
+    db.deleteFavs(userId)
+        .then(() => {
+            db.deleteAccount(userId)
+                .then(() => {
+                    res.redirect("/landingpage");
+                })
+                .catch((error) => {
+                    console.log("error in deleteAccount", error);
+                    res.json({ success: false });
+                });
+        })
+        .catch((error) => {
+            console.log("error in deleteFavs", error);
             res.json({ success: false });
         });
 });

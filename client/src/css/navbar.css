@@ -4,40 +4,107 @@
     width: 100vw;
     background-color: black;
     color: ghostwhite;
-    display: flex;
-    flex-flow: row-reverse wrap;
-    text-decoration: none;
-    justify-content: center;
     z-index: 2;
     height: 60px;
-    flex-wrap: nowrap;
+}
+.nav-modal-content {
+    position: absolute;
+    display: block;
+    height: 100vh;
+    width: 30vw;
+    background-color: white;
+    right: 0;
+    animation: slide-in 2s;
+}
+
+@keyframes slide-in {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: 30vw;
+    }
+}
+
+.close-nav {
+    position: absolute;
+    display: block;
+    right: 2rem;
+    top: 1rem;
+    color: black;
+    cursor: pointer;
+}
+
+.burger-menu {
+    display: flex;
+    justify-content: center;
+    color: white;
+    float: right;
+    width: 60px;
+    height: 60px;
+    font-weight: bold;
+    align-items: center;
 }
 
 .logo {
     position: absolute;
     left: 0;
 }
-.nav-links li,
+
+.nav-links-container {
+    margin-top: 8rem;
+    height: 100%;
+}
+
+.nav-links-list ul,
+li,
 a {
     text-decoration: none;
-    color: ghostwhite;
+    color: black;
     list-style: none;
-    display: inline-flex;
-    margin-left: 3rem;
-    margin-right: 0.3rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+.nav-link,
+.nav-logout {
+    text-decoration: none;
+}
+.nav-logout {
+    margin-top: 38rem;
+}
+
+.nav-delete {
+    margin-top: 2rem;
 }
 
 @media only screen and (max-width: 560px) {
-    .nav-links li,
+    .nav-links-list li,
     a {
         text-decoration: none;
         color: black;
         font-size: 1rem;
-        font-weight: 800;
         margin-left: 0.2rem;
+    }
+    .burger-menu {
+        color: black;
+        height: 50px;
+        width: 50px;
     }
     .nav-container {
         background-color: white;
         height: 50px;
+    }
+    .nav-modal-content {
+        width: 60vw;
+        animation: slide-in 2s;
+    }
+
+    @keyframes slide-in {
+        from {
+            width: 0vw;
+        }
+        to {
+            width: 60vw;
+        }
     }
 }

@@ -1,5 +1,6 @@
 .fav-ingreds {
     margin: 2rem;
+    width: 50%;
 }
 .fav-ingreds-label img {
     width: 400px;
@@ -8,10 +9,9 @@
     width: 7rem;
     height: 2.5rem;
 }
-.fav-ingreds-list li {
-    list-style: circle;
-    list-style-position: outside;
-}
-.fav-ingreds-list ul {
-    text-indent: 1rem;
+
+@media only screen and (max-width: 1000px) {
+    .fav-ingreds {
+        width: 100%;
+    }
 }

@@ -5,8 +5,8 @@ import "./css/favoriteRecipe.css";
 import DeleteFavRecipeButton from "./deleteFavrecipeButton";
 
 export default class FavoriteRecipe extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             error: false,
         };
@@ -53,7 +53,7 @@ export default class FavoriteRecipe extends Component {
                                     <a href={favorite.url}>{favorite.source}</a>
                                 </div>
                                 <div className="fav-ingreds-list">
-                                    <ul>
+                                    <ul className="fav-ingreds-list">
                                         {favorite.ingredient.map(
                                             (list, bucket) => {
                                                 console.log("list", list);

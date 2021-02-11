@@ -26,6 +26,8 @@ input:focus {
 }
 
 .image-container img {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     width: 300px;
     object-fit: cover;
