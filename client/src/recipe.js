@@ -3,6 +3,10 @@ import { Component } from "react";
 import "./css/Restaurant.css";
 import RecipeModal from "./recipemodal";
 
+import "./css/Restaurant.css";
+import "./css/recipelist.css";
+import "./css/recipemodal.css";
+
 export default class Recipe extends Component {
     constructor(props) {
         super(props);

@@ -223,7 +223,7 @@ app.get("/logout", (req, res) => {
     console.log("userId logout before", req.session.userId);
     req.session = null;
     console.log("userId logout after", req.session);
-    res.redirect("/landingpage");
+    res.redirect("/welcome");
 });
 
 // -------------  save Recipe ------------------------

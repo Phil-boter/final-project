@@ -87,11 +87,6 @@ export default class Reset extends Component {
                             Go
                         </button>
                     </div>
-                    <div className="SearchBar-header log">
-                        <h4 className="SearchBar-next Switch">
-                            <Link to="/">Not a member?</Link>
-                        </h4>
-                    </div>
                 </>
             );
         } else if (display === 1) {
@@ -121,19 +116,13 @@ export default class Reset extends Component {
                             onChange={(e) => this.handleChange(e)}
                         ></input>
                     </div>
-                    <div className="SearchBar-submit">
+                    <div className="SearchBar-submit landing">
                         <button
                             className="reset-button"
                             onClick={() => this.submitCode()}
                         >
                             Go
                         </button>
-                    </div>
-
-                    <div className="SearchBar-header log">
-                        <h4 className="SearchBar-next Switch">
-                            <Link to="/">Not a member?</Link>
-                        </h4>
                     </div>
                 </>
             );
@@ -159,15 +148,33 @@ export default class Reset extends Component {
 
     render() {
         return (
-            <div className="SearchBar">
-                <div className="SearchBar-header">
-                    <h1>Reset Password</h1>
+            <>
+                <div className="nav-landing-container">
+                    <div className="logo">
+                        <img src="/logo.png" alt="" />
+                    </div>
+
+                    <div className="landing-link">
+                        <h2>
+                            <Link to="/"> home</Link>
+                        </h2>
+                        <h2>
+                            <Link to="/registration"> registration</Link>
+                        </h2>
+                    </div>
                 </div>
-                {this.state.error && (
-                    <h3 className="error">Ooops!! Something went wrong...</h3>
-                )}
-                {this.getDisplay(this.state.display)}
-            </div>
+                <div className="SearchBar">
+                    <div className="SearchBar-header">
+                        <h1>Reset Password</h1>
+                    </div>
+                    {this.state.error && (
+                        <h3 className="error">
+                            Ooops!! Something went wrong...
+                        </h3>
+                    )}
+                    {this.getDisplay(this.state.display)}
+                </div>
+            </>
         );
     }
 }

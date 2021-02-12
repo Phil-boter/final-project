@@ -41,47 +41,64 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div className="SearchBar">
-                <div className="SearchBar-header">
-                    <h1>Login</h1>
-                </div>
-                {this.state.error && (
-                    <h3 className="error">Ooops!! Something went wrong...</h3>
-                )}
-                <div className="SearchBar-fields">
-                    <input
-                        className="field-left"
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        onChange={(e) => this.handleChange(e)}
-                    ></input>
-                    <input
-                        className="field-right"
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        onChange={(e) => this.handleChange(e)}
-                    ></input>
-                </div>
-                <div className="SearchBar-submit">
-                    <button
-                        className="login-button"
-                        onClick={() => this.handleClick()}
-                    >
-                        Go
-                    </button>
-                </div>
-                <div className="SearchBar-header log">
-                    <h4 className="SearchBar-next Switch">
-                        <Link to="/reset">Forgot your password?</Link>
-                    </h4>
+            <>
+                <div className="nav-landing-container">
+                    <div className="logo">
+                        <img src="/logo.png" alt="" />
+                    </div>
 
-                    <h4 className="SearchBar-next Switch">
-                        <Link to="/">Not a member?</Link>
-                    </h4>
+                    <div className="landing-link">
+                        <h2>
+                            <Link to="/"> home</Link>
+                        </h2>
+                        <h2>
+                            <Link to="/registration"> registration</Link>
+                        </h2>
+                    </div>
                 </div>
-            </div>
+                <div className="SearchBar">
+                    <div className="landing-header">
+                        <h2>login</h2>
+                    </div>
+                    <div className="SearchBar-header register">
+                        <h1>EL JEFFE</h1>
+                    </div>
+                    {this.state.error && (
+                        <h3 className="error">
+                            Ooops!! Something went wrong...
+                        </h3>
+                    )}
+                    <div className="SearchBar-fields">
+                        <input
+                            className="field-left"
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            onChange={(e) => this.handleChange(e)}
+                        ></input>
+                        <input
+                            className="field-right"
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            onChange={(e) => this.handleChange(e)}
+                        ></input>
+                    </div>
+                    <div className="SearchBar-submit">
+                        <button
+                            className="login-button"
+                            onClick={() => this.handleClick()}
+                        >
+                            Go
+                        </button>
+                    </div>
+                    <div className="SearchBar-header log">
+                        <h4 className="SearchBar-next Switch">
+                            <Link to="/reset">Forgot your password?</Link>
+                        </h4>
+                    </div>
+                </div>
+            </>
         );
     }
 }

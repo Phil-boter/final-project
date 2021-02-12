@@ -16,6 +16,9 @@ export default class Searchbar extends Component {
         };
         this.sendRecipe = this.sendRecipe.bind(this);
     }
+    componentDidUpdate() {
+        console.log("props in searchbar", this.props);
+    }
 
     handleChange(e) {
         console.log("event object name", e.target.name);
@@ -60,7 +63,10 @@ export default class Searchbar extends Component {
             <>
                 <div className="SearchBar">
                     <div className="SearchBar-header">
-                        <h2>Today I feel like eating...</h2>
+                        <h2>
+                            Hi {this.props.state.first}! What do you want to eat
+                            today?
+                        </h2>
                     </div>
                     {this.state.error && (
                         <h3 className="error">

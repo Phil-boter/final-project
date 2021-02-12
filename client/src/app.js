@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import RecipeList from "./recipelist";
-// import Navbar from "./navbar";
+
 import Searchbar from "./searchbar";
 import RestaurantList from "./RestaurantList";
 import SearchBarYelp from "./SearchBarYelp";
@@ -86,6 +86,7 @@ export default class App extends Component {
         this.setState({
             navbarIsVisible: false,
         });
+        Registration;
     }
 
     setRecipe(data) {
@@ -101,6 +102,9 @@ export default class App extends Component {
         this.setState({
             businesses: data,
         });
+    }
+    componentDidUpdate() {
+        console.log("update");
     }
 
     render() {
@@ -132,7 +136,10 @@ export default class App extends Component {
                         path="/"
                         render={() => (
                             <div className="background-image">
-                                <Searchbar setRecipe={this.setRecipe} />
+                                <Searchbar
+                                    setRecipe={this.setRecipe}
+                                    state={this.state}
+                                />
                             </div>
                         )}
                     ></Route>
