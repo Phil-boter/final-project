@@ -1,0 +1,35 @@
+.nav-landing-container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    background-color: white;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+.landing-link {
+    right: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    color: black;
+    padding: 1rem;
+}
+.landing-link h2 {
+    padding: 1.5rem;
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 560px) {
+    .nav-landing-container {
+        height: 50px;
+    }
+    .landing-link {
+        height: 50px;
+    }
+    .landing-link h2 {
+        padding: 0.3rem;
+    }
+}

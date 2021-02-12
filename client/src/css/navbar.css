@@ -3,15 +3,14 @@
     top: 0;
     width: 100vw;
     background-color: black;
-    color: ghostwhite;
-    z-index: 2;
+    z-index: 1;
     height: 60px;
 }
 .nav-modal-content {
     position: absolute;
     display: block;
     height: 100vh;
-    width: 30vw;
+    width: 40vw;
     background-color: white;
     right: 0;
     animation: slide-in 2s;
@@ -22,7 +21,7 @@
         width: 0vw;
     }
     to {
-        width: 30vw;
+        width: 40vw;
     }
 }
 
@@ -70,7 +69,7 @@ a {
     text-decoration: none;
 }
 .nav-logout {
-    margin-top: 38rem;
+    margin-top: 35rem;
 }
 
 .nav-delete {

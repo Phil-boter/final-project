@@ -7,10 +7,3 @@
 .reset-button {
     margin: 1rem;
 }
-@media only screen and (max-width: 560px) {
-    .reset-text {
-        color: black;
-        font-weight: 1000;
-        text-shadow: 0 0 0.3em white, 0 0 0.3em white;
-    }
-}

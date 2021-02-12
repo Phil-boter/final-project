@@ -30,7 +30,7 @@ input:focus {
     justify-content: center;
     margin: 0 auto;
     width: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* App Styles */
@@ -54,11 +54,12 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("/eatBig.jpg");
+    background-image: url("/rosemary.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-position-y: -50px;
+    object-fit: cover;
 }
 
 .logo {
@@ -74,7 +75,6 @@ h1 {
         font-size: 15px;
     }
     .background-image {
-        background-image: url("./iceSmall.jpg");
         background-position: 50% 0;
         background-position-y: -50px;
     }
@@ -84,15 +84,22 @@ h1 {
     }
 }
 
+@media only screen and (min-width: 750px) {
+    .background-image {
+        background-position: 50% 0;
+        background-position-y: -450px;
+    }
+}
+
 @media only screen and (min-width: 1050px) {
     .background-image {
         background-position: 50% 0;
-        background-position-y: -150px;
+        background-position-y: -950px;
     }
 }
 @media only screen and (min-width: 1550px) {
     .background-image {
         background-position: 50% 0;
-        background-position-y: -650px;
+        background-position-y: -1350px;
     }
 }

@@ -58,19 +58,22 @@
 
 .recipe-information p {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* align-content: center; */
     font-size: 0.88rem;
     font-weight: 300;
     line-height: 1rem;
 }
-.recipe-information a {
+.recipe-information a,
+li {
     color: black;
     text-decoration: underline;
-    justify-content: space-between;
+    /* justify-content: space-between;
+    align-items: center; */
+    list-style-type: none;
 }
-.recipe-information li {
+/* .recipe-information ,{
     display: flex;
     list-style-type: none;
     align-items: center;
-}
+} */
