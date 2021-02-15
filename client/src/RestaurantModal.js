@@ -56,9 +56,9 @@ export default class RestaurantModal extends Component {
                                     {this.props.business.categories.map(
                                         (category, index) => {
                                             return (
-                                                <li key={index}>
-                                                    {category.title}
-                                                </li>
+                                                <div key={index}>
+                                                    <li>{category.title}</li>
+                                                </div>
                                             );
                                         }
                                     )}

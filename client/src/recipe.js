@@ -16,11 +16,13 @@ export default class Recipe extends Component {
         };
         this.renderCautions = this.renderCautions.bind(this);
         this.renderTime = this.renderTime.bind(this);
-        this.renderYield = this.renderYield(this);
+        this.renderFeeds = this.renderFeeds(this);
         this.closeShowRecipe = this.closeShowRecipe.bind(this);
+        this.renderHealthLabels = this.renderHealthLabels.bind(this);
     }
 
     renderTime() {
+        console.log("totaltime", this.props.recipe.recipe.totalTime);
         if (
             !this.props.recipe.recipe.totalTime ||
             this.props.recipe.recipe.totalTime === "0"
@@ -44,6 +46,7 @@ export default class Recipe extends Component {
     }
 
     renderCautions() {
+        console.log("cautions", this.props.recipe.recipe.cautions);
         if (
             !this.props.recipe.recipe.cautions ||
             this.props.recipe.recipe.cautions.length == "0"
@@ -53,13 +56,46 @@ export default class Recipe extends Component {
             return (
                 <>
                     <h4>Cautions:</h4>
-                    <p>{` ${this.props.recipe.recipe.cautions} `} </p>
+                    <ul>
+                        {this.props.recipe.recipe.cautions.map(
+                            (caution, hint) => (
+                                <div key={hint}>
+                                    <li>{caution}</li>
+                                </div>
+                            )
+                        )}
+                    </ul>
                 </>
             );
         }
     }
 
-    renderYield() {
+    renderHealthLabels() {
+        if (
+            !this.props.recipe.recipe.healthLabels ||
+            this.props.recipe.recipe.healthLabels.length == "0"
+        ) {
+            return;
+        } else {
+            return (
+                <>
+                    <h4>Healthlabel:</h4>
+                    <ul>
+                        {this.props.recipe.recipe.healthLabels.map(
+                            (label, list) => (
+                                <div key={list}>
+                                    <li>{label}</li>
+                                </div>
+                            )
+                        )}
+                    </ul>
+                </>
+            );
+        }
+    }
+
+    renderFeeds() {
+        console.log("yield");
         if (!this.props.recipe.recipe.yield) {
             return;
         } else {
@@ -105,9 +141,14 @@ export default class Recipe extends Component {
                     <div className="recipe-information">
                         {this.renderTime()}
                     </div>
+
                     <div className="recipe-information">
-                        {this.renderCautions()}
+                        {this.renderHealthLabels()}
                     </div>
+
+                    {/* <div className="recipe-information">
+                        {this.renderCautions()}
+                    </div> */}
                 </div>
                 <div>
                     {this.state.showRecipeIsVisible && (
@@ -115,9 +156,10 @@ export default class Recipe extends Component {
                             recipe={this.props.recipe}
                             key={this.index}
                             closeShowRecipe={this.closeShowRecipe}
-                            renderYield={this.renderYield}
+                            renderFeeds={this.renderFeeds}
                             renderTime={this.renderTime()}
                             renderCautions={this.renderCautions()}
+                            renderHealthLabels={this.renderHealthLabels()}
                         />
                     )}
                 </div>

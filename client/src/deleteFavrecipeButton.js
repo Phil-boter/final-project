@@ -34,8 +34,10 @@ export default class DeleteFavRecipeButtom extends Component {
     render() {
         return (
             <>
-                {this.state.delete && <h3 className="error">Recipe deleted</h3>}
-                <div className="button-fav back">
+                {this.state.delete && (
+                    <h3 className="fav-deleted">Recipe deleted</h3>
+                )}
+                <div className="button-fav back delete">
                     <button onClick={() => this.handleDelete()}>delete</button>
                 </div>
             </>

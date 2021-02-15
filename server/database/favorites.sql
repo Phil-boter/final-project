@@ -8,6 +8,9 @@
       source VARCHAR(255) NOT NULL,
       image VARCHAR(255),
       ingredient TEXT[],
+      yield VARCHAR(255),
+      healthLabels TEXT[],
+      cautions TEXT[],
       userId INT REFERENCES users(id) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );

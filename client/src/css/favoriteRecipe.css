@@ -9,6 +9,15 @@
     width: 7rem;
     height: 2.5rem;
 }
+.delete {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+}
+
+.Fav-List {
+    display: flex;
+    flex-direction: row;
+}
 
 @media only screen and (max-width: 1000px) {
     .fav-ingreds {

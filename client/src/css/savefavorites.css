@@ -19,3 +19,6 @@
 .back button {
     width: 5rem;
 }
+.fav-deleted {
+    color: rgb(56, 56, 56);
+}

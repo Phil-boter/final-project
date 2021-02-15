@@ -21,8 +21,8 @@ export default class LandingPage extends Component {
     }
 
     renderTime(recipe) {
-        console.log("recipe.recipe", recipe.recipe);
-        if (!recipe.recipe.totalTime || recipe.recipe.totalTime === "0") {
+        console.log("recipe.recipe", recipe);
+        if (!recipe || recipe === "0") {
             return (
                 <>
                     <>
@@ -35,28 +35,27 @@ export default class LandingPage extends Component {
             return (
                 <>
                     <h4>Time:</h4>
-                    <p>{`${recipe.recipe.totalTime} min`}</p>
+                    <p>{`${recipe} min`}</p>
                 </>
             );
         }
     }
+    componentDidMount() {
+        console.log("state in registration", this.state);
+        console.log("props in regsitration", this.props);
+    }
 
     renderCautions(recipe) {
-        if (!recipe.recipe.cautions || recipe.recipe.cautions.length == "0") {
+        if (!recipe || recipe.length == "0") {
             return;
         } else {
             return (
                 <>
                     <h4>Cautions:</h4>
-                    <p>{` ${recipe.recipe.cautions} `} </p>
+                    <p>{` ${recipe} `} </p>
                 </>
             );
         }
-    }
-
-    componentDidMount() {
-        console.log("state in registration", this.state);
-        console.log("props in regsitration", this.props);
     }
 
     handleChange(e) {
@@ -157,10 +156,14 @@ export default class LandingPage extends Component {
                                             </a>
                                         </div>
                                         <div className="recipe-information">
-                                            {this.renderTime(recipe)}
+                                            {this.renderTime(
+                                                recipe.recipe.totalTime
+                                            )}
                                         </div>
                                         <div className="recipe-information">
-                                            {this.renderCautions(recipe)}
+                                            {this.renderCautions(
+                                                recipe.recipe.cautions
+                                            )}
                                         </div>
                                     </div>
                                 </div>

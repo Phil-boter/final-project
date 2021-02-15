@@ -9,6 +9,8 @@ export default class SaveFavorites extends Component {
             error: false,
             recipe: this.props.recipe.recipe,
             ingredient: this.props.recipe.recipe.ingredientLines,
+            healthLabels: this.props.recipe.recipe.healthLabels,
+            cautions: this.props.recipe.recipe.cautions,
         };
     }
 
@@ -23,6 +25,8 @@ export default class SaveFavorites extends Component {
             .post("/saveFavorite", {
                 recipe: this.state.recipe,
                 ingredient: this.state.ingredient,
+                healthLabels: this.state.healthLabels,
+                cautions: this.state.cautions,
             })
             .then((res) => {
                 if (res) {

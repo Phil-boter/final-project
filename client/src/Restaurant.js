@@ -16,8 +16,8 @@ export default class Restaurant extends Component {
     componentDidMount() {
         console.log("props in restaurant", this.props.business);
     }
-    renderPhone() {
-        if (!this.props.business.phone) {
+    renderPhone(phone) {
+        if (!phone) {
             return (
                 <>
                     <p>Phone:</p>
@@ -28,19 +28,19 @@ export default class Restaurant extends Component {
             return (
                 <>
                     <h4>Phone:</h4>
-                    {this.props.business.phone}
+                    {phone}
                 </>
             );
         }
     }
-    renderPrice() {
-        if (!this.props.business.price) {
+    renderPrice(price) {
+        if (!price) {
             return;
         } else {
             return (
                 <>
                     <h4>Price:</h4>
-                    {this.props.business.price}
+                    {price}
                 </>
             );
         }
@@ -80,7 +80,9 @@ export default class Restaurant extends Component {
                             {this.props.business.categories.map(
                                 (category, index) => {
                                     return (
-                                        <li key={index}>{category.title}</li>
+                                        <div key={index}>
+                                            <li>{category.title}</li>
+                                        </div>
                                     );
                                 }
                             )}
@@ -97,8 +99,12 @@ export default class Restaurant extends Component {
                             business={this.props.business}
                             key={this.props.business.id}
                             closeShowRestaurant={this.closeShowRestaurant}
-                            renderPhone={this.renderPhone()}
-                            renderPrice={this.renderPrice()}
+                            renderPhone={this.renderPhone(
+                                this.props.business.phone
+                            )}
+                            renderPrice={this.renderPrice(
+                                this.props.business.price
+                            )}
                         />
                     )}
                 </div>

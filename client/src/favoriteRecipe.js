@@ -32,15 +32,19 @@ export default class FavoriteRecipe extends Component {
     renderFavRec() {
         console.log("props in renderFavRec", this.state);
         if (!this.state.favoriteRecipe) {
-            return <h2>Sorry there is nothing saved in your favorites-list</h2>;
+            return (
+                <h2 class="no-recipe">
+                    Sorry there is nothing saved in your favorites-list
+                </h2>
+            );
         } else {
             return (
-                <div className="list">
+                <div className="list Fav-List">
                     {this.state.favoriteRecipe.map((favorite, list) => {
                         console.log("FAV", favorite);
                         return (
-                            <div className="fav-ingreds">
-                                <div key={list} className="fav-ingreds-label">
+                            <div key={list} className="fav-ingreds">
+                                <div className="fav-ingreds-label">
                                     <h2>{favorite.label}</h2>
                                     <div className="image-container">
                                         <a href={favorite.url} target="_blank">
@@ -49,16 +53,41 @@ export default class FavoriteRecipe extends Component {
                                     </div>
                                 </div>
                                 <div className="recipe-information">
-                                    <h4>Recipe on:</h4>
-                                    <a href={favorite.url}>{favorite.source}</a>
+                                    <h4>Recipe on :</h4>
+                                    <a href={favorite.url} target="_blank">
+                                        {favorite.source}
+                                    </a>
+                                </div>
+                                <div className="recipe-information">
+                                    <h4>Feeds :</h4>
+                                    {`${favorite.yield} persons`}
                                 </div>
                                 <div className="fav-ingreds-list">
+                                    <h4>Shopping list :</h4>
                                     <ul className="fav-ingreds-list">
                                         {favorite.ingredient.map(
                                             (list, bucket) => {
                                                 console.log("list", list);
                                                 return (
-                                                    <li key={bucket}>{list}</li>
+                                                    <div key={bucket}>
+                                                        <li>{list}</li>
+                                                    </div>
+                                                );
+                                            }
+                                        )}
+                                    </ul>
+                                </div>
+                                <div className="fav-ingreds-list">
+                                    <h4>Healthlabels :</h4>
+
+                                    <ul className="fav-ingreds-list">
+                                        {favorite.healthlabels.map(
+                                            (label, list) => {
+                                                console.log("label", label);
+                                                return (
+                                                    <div key={list}>
+                                                        <li>{label}</li>
+                                                    </div>
                                                 );
                                             }
                                         )}

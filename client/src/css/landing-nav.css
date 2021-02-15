@@ -8,18 +8,19 @@
     flex-direction: row;
 }
 .landing-link {
-    right: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 60px;
+    align-content: center;
+
     width: 100%;
     color: black;
     padding: 1rem;
 }
-.landing-link h2 {
+.landing-link a {
     padding: 1.5rem;
     font-weight: 800;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 560px) {

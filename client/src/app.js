@@ -1,7 +1,6 @@
 import { Component } from "react";
 import axios from "./axios";
 import { BrowserRouter, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 import RecipeList from "./recipelist";
 
@@ -31,27 +30,12 @@ export default class App extends Component {
             navbarIsVisible: false,
         };
         this.setRecipe = this.setRecipe.bind(this);
-        // this.searchYelp = this.searchYelp.bind(this);
         this.setRestaurant = this.setRestaurant.bind(this);
         this.closeNavbar = this.closeNavbar.bind(this);
     }
 
     componentDidMount() {
         console.log("component did mount FAV");
-
-        // axios.get("/getFavoriteRecipe").then(({ data }) => {
-        //     if (data.success) {
-        //         console.log("data", data);
-        //         this.setState({
-        //             success: true,
-        //             favoriteRecipe: data.favoriteRecipe,
-        //         });
-        //     } else {
-        //         this.setState({
-        //             error: true,
-        //         });
-        //     }
-        // });
 
         axios.get("/user").then(({ data }) => {
             if (data.success) {
@@ -75,18 +59,18 @@ export default class App extends Component {
     }
     toggleNavbar(e) {
         console.log("click toggle navbar");
+
         this.setState({
             navbarIsVisible: !this.state.navbarIsVisible,
         });
     }
 
-    closeNavbar(e) {
+    closeNavbar() {
         console.log("click close navbar");
 
         this.setState({
             navbarIsVisible: false,
         });
-        Registration;
     }
 
     setRecipe(data) {
@@ -118,7 +102,7 @@ export default class App extends Component {
                             <img src="/logo.png" alt="" />
                         </div>
                         <div className="burger-menu">
-                            <h2 onClick={(e) => this.toggleNavbar(e)}>|||</h2>
+                            <h2 onClick={(e) => this.toggleNavbar(e)}>menu</h2>
                             {this.state.navbarIsVisible && (
                                 <>
                                     <Navbar

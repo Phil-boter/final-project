@@ -9,7 +9,6 @@ export default class Navbar extends Component {
         this.state = {
             error: false,
         };
-        // this.closeNavbar = this.closeNavbar.bind(this);
     }
     componentDidMount() {
         console.log("mount Navbar");
@@ -17,47 +16,51 @@ export default class Navbar extends Component {
         console.log("state in navbar", this.state);
     }
 
-    // closeNavbar() {
-    //     console.log("click close navbar");
-
-    //     this.setState({
-    //         navbarIsVisible: false,
-    //     });
-    // }
-
     render() {
         return (
             <>
                 <div className="recipe-modal-container">
-                    <div className="nav-modal-content">
+                    <div className="nav-modal-content" id="nav-modal-close">
                         <div>
                             <h2
-                                className="close-nav"
+                                className="close-modal"
                                 onClick={this.props.closeNavbar}
                             >
                                 X
                             </h2>
                         </div>
                         <div className="nav-links-container">
-                            <ul className="nav-links-líst">
+                            <ul>
                                 <li className="nav-link">
-                                    <Link to="/">
-                                        <h2>Home</h2>
+                                    <Link
+                                        to="/"
+                                        className="nav-link"
+                                        onClick={this.props.closeNavbar}
+                                    >
+                                        Home
                                     </Link>
                                 </li>
                                 <li className="nav-link">
-                                    <Link to="/favoriteRecipe">
-                                        <h2>My Favorite Recipes</h2>
+                                    <Link
+                                        to="/favoriteRecipe"
+                                        className="nav-link"
+                                        onClick={this.props.closeNavbar}
+                                    >
+                                        My Favorite Recipes
                                     </Link>
                                 </li>
-                                <li className="nav-logout">
-                                    <a href="/logout">
-                                        <h2>logout</h2>
+                                <li className="nav-logout nav-link">
+                                    <a href="/logout" className="nav-link">
+                                        logout
                                     </a>
                                 </li>
-                                <li className="nav-delete">
-                                    <Link to="/deleteAccount">
-                                        <h2>Delete Account</h2>
+                                <li className="nav-delete nav-link">
+                                    <Link
+                                        to="/deleteAccount"
+                                        className="nav-link"
+                                        onClick={this.props.closeNavbar}
+                                    >
+                                        Delete Account
                                     </Link>
                                 </li>
                             </ul>

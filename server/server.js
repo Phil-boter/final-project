@@ -232,9 +232,11 @@ app.post("/saveFavorite", (req, res) => {
     console.log("post saveFavorite");
     console.log("req.body.recipe", req.body.recipe);
     console.log("req.body.ingredient", req.body.ingredient);
+    console.log("req.body.ingredient", req.body.healthLabels);
+    console.log("req.body.ingredient", req.body.cautions);
     console.log("req query", req.query);
     console.log("req.session:", req.session.userId);
-    const { uri, label, url, source, image } = req.body.recipe;
+    const { uri, label, url, source, image, yield } = req.body.recipe;
     let userId = req.session.userId;
     db.saveFavoriteRecipe(
         uri,
@@ -243,6 +245,9 @@ app.post("/saveFavorite", (req, res) => {
         source,
         image,
         req.body.ingredient,
+        yield,
+        req.body.healthLabels,
+        req.body.cautions,
         userId
     )
         .then(() => {

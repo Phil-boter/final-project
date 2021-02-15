@@ -37,7 +37,11 @@ export default class RecipeModal extends Component {
                             <ul>
                                 {this.props.recipe.recipe.ingredients.map(
                                     (ingredient, list) => (
-                                        <li key={list}>{ingredient.text}</li>
+                                        <>
+                                            <li key={list}>
+                                                {ingredient.text}
+                                            </li>
+                                        </>
                                     )
                                 )}
                             </ul>
@@ -51,10 +55,13 @@ export default class RecipeModal extends Component {
                                 </a>
                             </div>
                             <div className="recipe-information">
-                                {this.props.renderYield}
+                                {this.props.renderFeeds}
                             </div>
                             <div className="recipe-information">
                                 {this.props.renderTime}
+                            </div>
+                            <div className="recipe-information">
+                                {this.props.renderHealthLabels}
                             </div>
                             <div className="recipe-information">
                                 {this.props.renderCautions}
