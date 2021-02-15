@@ -14,7 +14,15 @@ const s3 = require("./s3");
 const { s3Url } = require("./config.json");
 
 const { default: axios } = require("axios");
-const secrets = require("../secrets.json");
+
+let secrets;
+if (process.env.NODE_ENV == "production") {
+    secrets = process.env; // in prod the secrets are environment variables
+} else {
+    secrets = require("../secrets.json"); // in dev they are in secrets.json which is listed in .gitignore
+}
+
+// const secrets = require("../secrets.json");
 
 // Multer configurations ------------------------------------------------------
 // Specify file names and destinations
