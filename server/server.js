@@ -209,7 +209,7 @@ app.post("/password/reset/verify", (req, res) => {
 
 app.get("/user", (req, res) => {
     console.log("get user");
-    console.log("req session", req.session);
+    // console.log("req session", req.session);
     db.getUserData(req.session.userId)
         .then(({ rows }) => {
             res.json({
@@ -309,18 +309,15 @@ app.post("/deleteAccount", (req, res) => {
     console.log("req session", req.session);
     const { userId } = req.session;
     db.deleteFavs(userId)
-        .then(() => {
-            db.deleteAccount(userId)
-                .then(() => {
-                    res.redirect("/landingpage");
-                })
-                .catch((error) => {
-                    console.log("error in deleteAccount", error);
-                    res.json({ success: false });
-                });
+        .then((res) => {
+            return db.deleteAccount(userId);
+        })
+        .then((response) => {
+            console.log("delete User resolved", response);
+            res.json({ success: true });
         })
         .catch((error) => {
-            console.log("error in deleteFavs", error);
+            console.log("error in deleteAccount", error);
             res.json({ success: false });
         });
 });

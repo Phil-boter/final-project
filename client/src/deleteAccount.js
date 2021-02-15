@@ -8,6 +8,7 @@ export default class DeleteAccount extends Component {
         this.state = {
             error: false,
         };
+        this.logout = this.logout.bind(this);
     }
     componentDidMount() {
         console.log("mount delete Account");
@@ -15,22 +16,39 @@ export default class DeleteAccount extends Component {
         console.log("state in delete Account", this.state);
     }
 
+    logout() {
+        axios.get("/logout").then(() => location.replace("/welcome"));
+        socket.emit("disconnect");
+    }
     handleClick() {
-        console.log("click in delete Account");
+        let self = this;
+        console.log("delete profile fired!");
         axios
             .post("/deleteAccount")
-            .then(() => {
-                this.setState({
-                    success: true,
-                });
+            .then((res) => {
+                console.log("delete resolved: ", res);
+                self.logout();
             })
-            .catch((error) => {
-                console.log("error in delete account", error);
-                this.setState({
-                    error: true,
-                });
+            .catch((err) => {
+                console.log("error at POST /deleteprofile", err);
             });
     }
+    // handleClick() {
+    //     console.log("click in delete Account");
+    //     axios
+    //         .post("/deleteAccount")
+    //         .then(() => {
+    //             this.setState({
+    //                 success: true,
+    //             });
+    //         })
+    //         .catch((error) => {
+    //             console.log("error in delete account", error);
+    //             this.setState({
+    //                 error: true,
+    //             });
+    //         });
+    // }
 
     render() {
         return (
@@ -45,14 +63,14 @@ export default class DeleteAccount extends Component {
                         </h3>
                     )}
                     <div className="Switch-container">
-                        <a href="/landingSearch">
-                            <button
-                                onClick={() => this.handleClick()}
-                                className="Switch"
-                            >
-                                DELETE
-                            </button>
-                        </a>
+                        {/* <a href="/welcome"> */}
+                        <button
+                            onClick={() => this.handleClick()}
+                            className="Switch"
+                        >
+                            DELETE
+                        </button>
+                        {/* </a> */}
                     </div>
                     <div className="Switch-container">
                         <Link to="/">
