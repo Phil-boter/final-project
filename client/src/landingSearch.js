@@ -92,7 +92,7 @@ export default class LandingPage extends Component {
                 .then(({ data }) => {
                     console.log("data getRecipe", data);
                     this.setState({
-                        success: true,
+                        // success: true,
                         recipes: { data },
                     });
                     // this.sendRecipe(data);
@@ -178,56 +178,62 @@ export default class LandingPage extends Component {
     render() {
         return (
             <>
-                <div className="nav-landing-container">
-                    <div className="logo">
-                        <img src="/logo.png" alt="" />
-                    </div>
+                <div className="background-image">
+                    <div className="nav-landing-container">
+                        <div className="logo">
+                            <img src="/logo.png" alt="" />
+                        </div>
 
-                    <div className="landing-link">
-                        <h2>
-                            <Link to="/login">login </Link>
-                        </h2>
+                        <div className="landing-link">
+                            <h2>
+                                <Link to="/login">login </Link>
+                            </h2>
+                        </div>
                     </div>
-                </div>
-                <div className="SearchBar">
-                    <div className="SearchBar-header register">
-                        <h1>EL JEFFE</h1>
-                    </div>
-                    <div className="landing-header">
-                        <h2>what would I like to eat today?</h2>
-                    </div>
-                    <div className="landing-header">
-                        <h2>get inspiration with EL JEFFE</h2>
-                    </div>
+                    <div className="SearchBar">
+                        <div className="SearchBar-header register">
+                            <h1>EL JEFFE</h1>
+                        </div>
+                        <div className="landing-header">
+                            <h2>what would I like to eat today?</h2>
+                        </div>
+                        <div className="landing-header">
+                            <h2>get inspiration with EL JEFFE</h2>
+                        </div>
 
-                    {this.state.error && (
-                        <h3 className="error">
-                            Ooops!! Something went wrong...
-                        </h3>
-                    )}
-                    <div className="SearchBar-fields">
-                        <input
-                            className="field"
-                            placeholder="Pasta, Burger or Poke Bowl?"
-                            type="text"
-                            onChange={(e) => this.handleSearch(e)}
-                        />
+                        {this.state.error && (
+                            <h3 className="error">
+                                Ooops!! Something went wrong...
+                            </h3>
+                        )}
+                        <div className="SearchBar-fields">
+                            <input
+                                className="field"
+                                placeholder="Pasta, Burger or Poke Bowl?"
+                                type="text"
+                                onChange={(e) => this.handleSearch(e)}
+                            />
+                        </div>
+                        <div className="SearchBar-submit">
+                            <button
+                                type="submit"
+                                onClick={() => this.handleSubmit()}
+                            >
+                                Go
+                            </button>
+                        </div>
+                        <div className="SearchBar-header log">
+                            <h1>
+                                Get more fantastic features after Registration!
+                            </h1>
+                            <h4 className="SearchBar-next Switch">
+                                <Link to="/registration">Registration</Link>
+                            </h4>
+                        </div>
+                        <div className="render-recipe">
+                            {this.renderRecipes()}
+                        </div>
                     </div>
-                    <div className="SearchBar-submit">
-                        <button
-                            type="submit"
-                            onClick={() => this.handleSubmit()}
-                        >
-                            Go
-                        </button>
-                    </div>
-                    <div className="SearchBar-header log">
-                        <h1>Get more fantastic features after Registration!</h1>
-                        <h4 className="SearchBar-next Switch">
-                            <Link to="/registration">Registration</Link>
-                        </h4>
-                    </div>
-                    <div className="render-recipe">{this.renderRecipes()}</div>
                 </div>
             </>
         );

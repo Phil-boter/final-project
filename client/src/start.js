@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import App from "./app";
 import Welcome from "./welcome";
+import LandingPage from "./landingSearch";
 
 let elem;
 

@@ -45,7 +45,7 @@ export default class DeleteAccount extends Component {
                         </h3>
                     )}
                     <div className="Switch-container">
-                        <a href="/landingpage">
+                        <a href="/landingSearch">
                             <button
                                 onClick={() => this.handleClick()}
                                 className="Switch"

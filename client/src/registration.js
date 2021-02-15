@@ -10,14 +10,13 @@ export default class Registration extends Component {
         super(props);
         this.state = {
             input: "",
-            recipes: [],
             error: false,
         };
     }
 
     componentDidMount() {
         console.log("state in registration", this.state);
-        console.log("props in regsitration", this.props);
+        // console.log("props in regsitration", this.props);
     }
 
     handleChange(e) {
