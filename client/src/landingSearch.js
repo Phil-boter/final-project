@@ -230,10 +230,8 @@ export default class LandingPage extends Component {
                                 <Link to="/registration">Registration</Link>
                             </h4>
                         </div>
-                        <div className="render-recipe">
-                            {this.renderRecipes()}
-                        </div>
                     </div>
+                    <div className="render-recipe">{this.renderRecipes()}</div>
                 </div>
             </>
         );

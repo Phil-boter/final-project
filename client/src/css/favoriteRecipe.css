@@ -17,10 +17,26 @@
 .Fav-List {
     display: flex;
     flex-direction: row;
+    top: 100px;
+}
+.no-recipe {
+    margin-top: 300px;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 1000px) {
     .fav-ingreds {
         width: 100%;
+    }
+}
+@media (orientation: portrait) {
+    .no-recipe {
+        font-size: 1.3rem;
+    }
+    .back button {
+        width: 13rem;
+        height: 2.8rem;
+        font-size: 1.5rem;
     }
 }

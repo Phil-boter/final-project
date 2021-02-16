@@ -164,8 +164,8 @@ export default class Reset extends Component {
                     </div>
                 </div>
                 <div className="SearchBar">
-                    <div className="SearchBar-header">
-                        <h1>Reset Password</h1>
+                    <div className="landing-header">
+                        <h2>Reset Password</h2>
                     </div>
                     {this.state.error && (
                         <h3 className="error">

@@ -79,6 +79,8 @@ export default class SearchBarYelp extends Component {
                         placeholder="Search for Restaurants"
                         onChange={this.handleTermChange}
                     />
+                </div>
+                <div className="SearchBar-fields">
                     <input
                         className="field-right"
                         placeholder="City and zip-code"

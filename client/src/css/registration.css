@@ -33,3 +33,17 @@
         margin: 1rem;
     }
 }
+@media (orientation: portrait) {
+    .reg input {
+        margin: 0.3rem 1rem;
+        width: 45%;
+        padding: 0.66rem 1rem;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .landing-header :nth-child(2) {
+        margin-bottom: 1rem;
+    }
+}

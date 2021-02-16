@@ -31,11 +31,15 @@ export default class FavoriteRecipe extends Component {
 
     renderFavRec() {
         console.log("props in renderFavRec", this.state);
-        if (!this.state.favoriteRecipe) {
+        if (
+            !this.state.favoriteRecipe ||
+            this.state.favoriteRecipe.length == "0"
+        ) {
+            console.log("if");
             return (
-                <h2 class="no-recipe">
-                    Sorry there is nothing saved in your favorites-list
-                </h2>
+                <div className="no-recipe">
+                    <h2>Sorry there is nothing saved in your favorites-list</h2>
+                </div>
             );
         } else {
             return (
@@ -93,7 +97,18 @@ export default class FavoriteRecipe extends Component {
                                         )}
                                     </ul>
                                 </div>
-                                <DeleteFavRecipeButton favorite={favorite} />
+                                <div className="button-fav">
+                                    <div className="back">
+                                        <DeleteFavRecipeButton
+                                            favorite={favorite}
+                                        />
+                                    </div>
+                                    <div className="back">
+                                        <Link to="/">
+                                            <button>Back</button>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
                         );
                     })}
@@ -113,11 +128,6 @@ export default class FavoriteRecipe extends Component {
                     </Link>
                 </div> */}
                 {this.renderFavRec()}
-                <div className="button-fav back">
-                    <Link to="/">
-                        <button>Back</button>
-                    </Link>
-                </div>
             </>
         );
     }

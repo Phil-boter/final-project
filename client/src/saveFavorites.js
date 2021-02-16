@@ -42,8 +42,11 @@ export default class SaveFavorites extends Component {
     render() {
         return (
             <>
-                <div>
-                    <button onClick={() => this.SaveFavorite()}>
+                <div className="button-save save">
+                    <button
+                        className="save"
+                        onClick={() => this.SaveFavorite()}
+                    >
                         Save to favorites
                     </button>
                 </div>

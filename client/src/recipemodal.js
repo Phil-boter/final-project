@@ -66,7 +66,7 @@ export default class RecipeModal extends Component {
                             <div className="recipe-information">
                                 {this.props.renderCautions}
                             </div>
-                            <div className="button-fav">
+                            <div>
                                 <SaveFavorites recipe={this.props.recipe} />
                             </div>
                         </div>

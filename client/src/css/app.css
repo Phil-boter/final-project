@@ -58,8 +58,7 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    background-position-y: -50px;
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
 .logo {
@@ -101,5 +100,20 @@ h1 {
     .background-image {
         background-position: 50% 0;
         background-position-y: -1350px;
+    }
+}
+@media (orientation: portrait) {
+    .logo img {
+        height: 100px;
+        width: 100px;
+    }
+    .image-container img {
+        width: 450px;
+        object-fit: cover;
+    }
+    .background-image {
+        background-image: url("/bluebig.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }

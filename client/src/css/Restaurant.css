@@ -12,11 +12,6 @@
     list-style-position: outside;
 }
 
-.restaurant .image-container {
-    height: 16.66rem;
-    margin-bottom: 1rem;
-}
-
 .restaurant h2 {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
@@ -68,4 +63,23 @@ li {
     color: black;
 
     list-style-type: none;
+}
+@media (orientation: portrait) {
+    .restaurant {
+        width: 80vw;
+        font-size: 1.7rem;
+    }
+    .restaurant h2 {
+        margin-bottom: 0.5rem;
+        font-size: 2.3rem;
+        font-weight: 600;
+    }
+    .restaurant-information p {
+        font-size: 1.7rem;
+        font-weight: 300;
+    }
+
+    .recipe-information p {
+        font-size: 1.7rem;
+    }
 }

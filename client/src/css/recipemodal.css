@@ -37,6 +37,7 @@
     width: 300px;
     object-fit: cover;
     margin: 0 auto;
+    display: flex;
 }
 
 .recipe-close-modal {
@@ -80,5 +81,15 @@
     .recipe-modal-image {
         width: 250px;
         object-fit: cover;
+    }
+}
+@media (orientation: portrait) {
+    .recipe-close-modal {
+        right: initial;
+
+        font-size: 2.3rem;
+    }
+    .recipe-modal-content {
+        width: 80vw;
     }
 }

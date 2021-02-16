@@ -135,3 +135,55 @@
         }
     }
 }
+@media (orientation: portrait) {
+    .nav-container {
+        height: 100px;
+    }
+    .nav-modal-content {
+        width: 70vw;
+        background-color: white;
+        right: 0;
+        animation: slide-in 1s;
+    }
+    @keyframes slide-in {
+        from {
+            width: 0vw;
+        }
+        to {
+            width: 70vw;
+        }
+    }
+    .close-modal {
+        position: absolute;
+        display: block;
+        right: 4rem;
+        top: 2rem;
+        color: black;
+        cursor: pointer;
+        font-size: 3rem;
+    }
+
+    .burger-menu {
+        width: 100px;
+        height: 100px;
+
+        font-size: 1.8rem;
+    }
+
+    .nav-link,
+    .nav-logout a {
+        list-style-position: outside;
+        text-decoration: none;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+
+        color: black;
+    }
+    .nav-logout {
+        margin-top: 60rem;
+    }
+
+    .nav-delete {
+        margin-top: 2rem;
+    }
+}
