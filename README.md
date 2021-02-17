@@ -10,7 +10,8 @@ If everything fails it also has an implemented restaurant search for the nearest
     At the homepage the user can search for shoppinglists. It is also possible to make an 
     user account. 
     If the user sign in, it is possible to reset the password. 
-    Making an user account has the benefit of having a more detailed shoppinglist and the restaurant search.
+    Setting up an user account has the benefit of having a more detailed shoppinglist 
+    and the restaurant search.
     It is also possible to store and delete favorite shoppinglists. 
     Finally the user can decide to logout or to delete the account.
     Two different server side API calls are made for the search functionality.
