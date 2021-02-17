@@ -7,8 +7,7 @@ If everything fails it also has an implemented restaurant search for the nearest
 ## About
     I built this project during my attendance to the Coding Bootcamp at Spiced Academy's in Berlin.
 
-    At the homepage the user can search for shoppinglists. It is also possible to make an 
-    user account. 
+    At the homepage the user can search for shoppinglists. It is also possible to make an user account. 
     If the user sign in, it is possible to reset the password. 
     Setting up an user account has the benefit of having a more detailed shoppinglist 
     and the restaurant search.
