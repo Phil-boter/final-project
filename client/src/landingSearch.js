@@ -59,14 +59,13 @@ export default class LandingPage extends Component {
     }
 
     handleChange(e) {
-        // e-- event Object to handle th users input from "name" property of event-object
         console.log("event object name", e.target.name);
         console.log("event object value", e.target.value);
         this.setState(
             {
-                [e.target.name]: e.target.value, // [] tells setState thate.target.name is a variable
+                [e.target.name]: e.target.value,
             },
-            () => console.log("this.state in handleChange", this.state) // because setState is asyncronous
+            () => console.log("this.state in handleChange", this.state)
         );
     }
 

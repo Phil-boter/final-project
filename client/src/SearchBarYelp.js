@@ -17,7 +17,6 @@ export default class SearchBarYelp extends Component {
         this.sendRestaurant = this.sendRestaurant.bind(this);
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
-        // this.handleSearch = this.handleSearch.bind(this);
     }
 
     handleTermChange(event) {

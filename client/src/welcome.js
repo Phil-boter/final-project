@@ -7,12 +7,6 @@ import Reset from "./reset";
 import "./css/app.css";
 
 export default function Welcome() {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {};
-    // }
-    // // no class because no logic
-    // render() {
     return (
         <>
             <HashRouter>

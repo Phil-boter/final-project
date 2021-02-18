@@ -33,22 +33,6 @@ export default class DeleteAccount extends Component {
                 console.log("error at POST /deleteprofile", err);
             });
     }
-    // handleClick() {
-    //     console.log("click in delete Account");
-    //     axios
-    //         .post("/deleteAccount")
-    //         .then(() => {
-    //             this.setState({
-    //                 success: true,
-    //             });
-    //         })
-    //         .catch((error) => {
-    //             console.log("error in delete account", error);
-    //             this.setState({
-    //                 error: true,
-    //             });
-    //         });
-    // }
 
     render() {
         return (

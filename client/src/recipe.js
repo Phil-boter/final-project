@@ -145,10 +145,6 @@ export default class Recipe extends Component {
                     <div className="recipe-information">
                         {this.renderHealthLabels()}
                     </div>
-
-                    {/* <div className="recipe-information">
-                        {this.renderCautions()}
-                    </div> */}
                 </div>
                 <div>
                     {this.state.showRecipeIsVisible && (

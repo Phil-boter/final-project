@@ -76,4 +76,3 @@ export default class RecipeModal extends Component {
         );
     }
 }
-//  className = "recipecard-ingredients";

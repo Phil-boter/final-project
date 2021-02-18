@@ -10,7 +10,7 @@ export default class Restaurant extends Component {
             error: false,
             showRecipeIsVisible: false,
         };
-        // this.renderPhone = this.renderPhone.bind(this);
+
         this.closeShowRestaurant = this.closeShowRestaurant.bind(this);
     }
     componentDidMount() {

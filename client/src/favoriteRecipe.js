@@ -120,15 +120,6 @@ export default class FavoriteRecipe extends Component {
     render() {
         console.log("props in FAV", this.props);
         console.log("this.state in FAV", this.state);
-        return (
-            <>
-                {/* <div className="button-fav back">
-                    <Link to="/">
-                        <button>Back</button>
-                    </Link>
-                </div> */}
-                {this.renderFavRec()}
-            </>
-        );
+        return <>{this.renderFavRec()}</>;
     }
 }

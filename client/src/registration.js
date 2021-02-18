@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./css/registration.css";
 
 export default class Registration extends Component {
-    // default -- import without {}
     constructor(props) {
         super(props);
         this.state = {
@@ -16,18 +15,16 @@ export default class Registration extends Component {
 
     componentDidMount() {
         console.log("state in registration", this.state);
-        // console.log("props in regsitration", this.props);
     }
 
     handleChange(e) {
-        // e-- event Object to handle th users input from "name" property of event-object
         console.log("event object name", e.target.name);
         console.log("event object value", e.target.value);
         this.setState(
             {
-                [e.target.name]: e.target.value, // [] tells setState thate.target.name is a variable
+                [e.target.name]: e.target.value,
             },
-            () => console.log("this.state in handleChange", this.state) // because setState is asyncronous
+            () => console.log("this.state in handleChange", this.state)
         );
     }
 
@@ -83,7 +80,7 @@ export default class Registration extends Component {
                                 type="text"
                                 name="first"
                                 placeholder="First name"
-                                onChange={(e) => this.handleChange(e)} // arrow function instead of .bind but don't mix them up
+                                onChange={(e) => this.handleChange(e)}
                             ></input>
 
                             <input
@@ -119,11 +116,6 @@ export default class Registration extends Component {
                             Go
                         </button>
                     </div>
-                    {/* <div className="SearchBar-header log">
-                        <h4 className="SearchBar-next Switch">
-                            <Link to="/login">Already registered?</Link>
-                        </h4>
-                    </div> */}
                 </div>
             </>
         );
