@@ -29,8 +29,9 @@ input:focus {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: 300px;
-    object-fit: contain;
+    width: 21rem;
+    height: 21rem;
+    object-fit: cover;
 }
 
 /* App Styles */
@@ -58,7 +59,6 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    object-fit: scale-down;
 }
 
 .logo {
@@ -102,7 +102,7 @@ h1 {
         background-position-y: -1350px;
     }
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .logo img {
         height: 100px;
         width: 100px;
@@ -116,4 +116,4 @@ h1 {
         background-size: cover;
         background-repeat: no-repeat;
     }
-}
+} */

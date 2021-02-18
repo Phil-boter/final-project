@@ -205,15 +205,13 @@ h4 {
 }
 
 /* ------smartphone ------ */
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .SearchBar {
         top: 100px;
         height: 100vh;
     }
-    .SearchBar-header {
-        /* top: 0; */
+    .SearchBar-header {     
         margin: 0 auto;
-        /* border: 1px solid green; */
         display: flex;
         text-align: center;
         align-content: center;
@@ -260,4 +258,4 @@ h4 {
         font-size: 3rem;
         animation: pulse-por 4s infinite;
     }
-}
+} */

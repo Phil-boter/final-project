@@ -33,7 +33,7 @@
         padding: 0.3rem;
     }
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .nav-landing-container {
         height: 100px;
     }
@@ -47,4 +47,4 @@
         font-weight: 800;
         text-decoration: none;
     }
-}
+} */

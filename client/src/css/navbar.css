@@ -135,7 +135,7 @@
         }
     }
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .nav-container {
         height: 100px;
     }
@@ -186,4 +186,4 @@
     .nav-delete {
         margin-top: 2rem;
     }
-}
+} */

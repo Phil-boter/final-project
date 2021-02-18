@@ -33,7 +33,7 @@
         margin: 1rem;
     }
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .reg input {
         margin: 0.3rem 1rem;
         width: 45%;
@@ -46,4 +46,4 @@
     .landing-header :nth-child(2) {
         margin-bottom: 1rem;
     }
-}
+} */

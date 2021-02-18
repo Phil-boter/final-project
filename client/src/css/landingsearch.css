@@ -17,7 +17,7 @@
     margin-bottom: 1rem;
 }
 
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .landing-header h2 {
         font-size: 2rem;
         text-shadow: 0 0 0.3em black, 0 0 0.3em black;
@@ -25,4 +25,4 @@
     .landing-header :nth-child(2) {
         margin-bottom: 1rem;
     }
-}
+} */

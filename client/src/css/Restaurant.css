@@ -64,7 +64,7 @@ li {
 
     list-style-type: none;
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .restaurant {
         width: 80vw;
         font-size: 1.7rem;
@@ -82,4 +82,4 @@ li {
     .recipe-information p {
         font-size: 1.7rem;
     }
-}
+} */

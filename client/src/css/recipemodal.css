@@ -83,7 +83,7 @@
         object-fit: cover;
     }
 }
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     .recipe-close-modal {
         right: initial;
 
@@ -92,4 +92,4 @@
     .recipe-modal-content {
         width: 80vw;
     }
-}
+} */
