@@ -1,8 +1,8 @@
 # final-project/EL JEFFE
 
-El JEFFE will help you, when you stand in the supermarket still not knowing what to eat or cook 
+El JEFFE will help you, when you are in the supermarket still not knowing what to eat or cook,
 by searching online for shopping lists and recipes.
-If everything fails it also has an implemented restaurant search for the nearest restaurant of your choice.
+If everything fails it also has an implemented restaurant search for the nearest local of your choice.
 
 ## About
     I builded this project during my attendance to the Coding Bootcamp at Spiced Academy's in Berlin.
