@@ -37,4 +37,4 @@ If everything fails it also has an implemented restaurant search for the nearest
         # Start client server
         npm run dev:client
 
-## Screenshots
+
